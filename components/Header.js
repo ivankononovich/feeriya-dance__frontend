@@ -1,9 +1,9 @@
 import Link from 'next/link';
 
 import css from './../styles/header.scss';
-import Container from './../components/Container';
+import Container from './Container';
 
-export default () => 
+export default (props) =>  
     <header className={ css.header }>
         <Container>
             <Link href='/index' as='/'>
@@ -11,3 +11,5 @@ export default () =>
             </Link>
         </Container>
     </header>
+
+    

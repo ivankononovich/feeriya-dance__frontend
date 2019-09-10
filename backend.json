@@ -1,0 +1,199 @@
+{
+  "contacts": [
+    {
+      "url": "tel:+375445121761",
+      "text": "+375 (44) 512 - 17 - 61",
+      "id": "jzsu9ehq"
+    },
+    {
+      "url": "mailto:feeriyadance76@gmail.com",
+      "text": "feeriyadance76@gmail.com",
+      "id": "jzsu9ehr"
+    },
+    {
+      "url": "https://www.instagram.com/feeriya_dance_/?utm_source=ig_profile_share&igshid=1infjveeispbm",
+      "text": "instagram",
+      "id": "jzsu9ehs"
+    }
+  ],
+  "categories": [
+    {
+      "nameRU": "танцы",
+      "nameEN": "dance",
+      "subcategory": [
+        {
+          "nameRU": "тренировачная одежда",
+          "nameEN": "trainer clothes",
+          "id": "k02h710r"
+        },
+        {
+          "nameRU": "туфли",
+          "nameEN": "shoes",
+          "id": "jzsu9ehu"
+        },
+        {
+          "nameRU": "платья",
+          "nameEN": "dresses",
+          "id": "k02hci62"
+        },
+        {
+          "nameRU": "рубашки",
+          "nameEN": "shirts",
+          "id": "k02hd4ai"
+        },
+        {
+          "nameRU": "галстуки, бабочки",
+          "nameEN": "ties",
+          "id": "k02hdgdt"
+        },
+        {
+          "nameRU": "колготки",
+          "nameEN": "tigths",
+          "id": "k02hdvxz"
+        },
+        {
+          "nameRU": "наколенники",
+          "nameEN": "knee pads",
+          "id": "k02he9k7"
+        },
+        {
+          "nameRU": "аксессуары для обуви",
+          "nameEN": "shoe accesories",
+          "id": "k02helwq"
+        },
+        {
+          "nameRU": "аксессуары для волос",
+          "nameEN": "hair accesories",
+          "id": "k02hext3"
+        },
+        {
+          "nameRU": "косметика",
+          "nameEN": "cosmetics",
+          "id": "k02hfbjy"
+        },
+        {
+          "nameRU": "накладные ресницы",
+          "nameEN": "tigths",
+          "id": "k02hfon7"
+        },
+        {
+          "nameRU": "накладные ресницы",
+          "nameEN": "false eyelashes",
+          "id": "k02hg0xg"
+        },
+        {
+          "nameRU": "сумки и чехлы",
+          "nameEN": "bags and cases",
+          "id": "k02hgb35"
+        }
+      ],
+      "id": "jzsu9eht"
+    },
+    {
+      "nameRU": "гимнастика",
+      "nameEN": "gymnastics",
+      "subcategory": [
+        {
+          "nameRU": "купальники",
+          "nameEN": "swimwear",
+          "id": "jzsu9ehw1"
+        },
+        {
+          "nameRU": "нижнее бельё",
+          "nameEN": "underwear",
+          "id": "jzsu9ehw2"
+        }
+      ],
+      "id": "jzsu9ehv"
+    },
+    {
+      "nameRU": "фитнес",
+      "nameEN": "fitness",
+      "subcategory": [
+        {
+          "nameRU": "лонг слив",
+          "nameEN": "longsliv",
+          "id": "jzsu9ehy1"
+        },
+        {
+          "nameRU": "топы",
+          "nameEN": "tops",
+          "id": "jzsu9ehy2"
+        }
+      ],
+      "id": "jzsu9ehx"
+    }
+  ],
+  "products": [
+    {
+      "nameRU": "туфли стандарт мужские",
+      "id": "jzsu9ehz",
+      "image": "product-1.jpg",
+      "categorize": ["jzsu9eht", "jzsu9ehu"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40",
+          "id": "jzsu9ei0"
+        }
+      ]
+    },
+    {
+      "nameRU": "автозагар аэротан",
+      "id": "k02i58ok",
+      "image": "icon-4.png",
+      "categorize": ["jzsu9eht", "k02hfbjy"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40",
+          "id": "k02il0yt"
+        }
+      ]
+    },
+    {
+      "nameRU": "купальник гимнастический",
+      "id": "jzsu9ei1",
+      "image": "product-1.jpg",
+      "categorize": ["jzsu9ehv", "jzsu9ehx", "jzsu9ehw1"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40",
+          "id": "jzsu9ei2"
+        }
+      ]
+    },
+    {
+      "nameRU": "топ",
+      "id": "jzsu9ei3",
+      "image": "product-1.jpg",
+      "categorize": ["jzsu9ehx", "jzsu9ehy2", "jzsu9ehv"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40",
+          "id": "jzsu9ei4"
+        }
+      ]
+    },
+    {
+      "nameRU": "лонг слив",
+      "id": "jzsu9ei5",
+      "image": "product-1.jpg",
+      "categorize": ["jzsu9ehx", "jzsu9ehy1", "jzsu9ehv"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40",
+          "id": "jzsu9ei6"
+        }
+      ]
+    }
+  ]
+}
