@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import css from './../styles/index.scss';
-import Header from './../components/Header';
+import Header from './../components/Header/Header';
 
 export default () => <>
 	<Header />

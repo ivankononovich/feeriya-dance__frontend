@@ -1,8 +1,8 @@
 import Link from 'next/link';
 
-import css from './../styles/header.scss';
-import Container from './Container';
-import Contacts from './Contacts/ContactsContainer';
+import css from './header.scss';
+import Container from '../Container/Container';
+import Contacts from '../Contacts/ContactsContainer';
 
 export default (props) =>  
     <header className={ css.header }>

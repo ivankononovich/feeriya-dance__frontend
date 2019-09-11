@@ -1,4 +1,4 @@
-import css from './../styles/container.scss';
+import css from './container.scss';
 
 
 export default ({ children, additionalClasses }) => 
