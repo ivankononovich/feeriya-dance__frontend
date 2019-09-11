@@ -19,27 +19,22 @@ class MyApp extends App {
     }
 
     componentDidMount() {
-        const store = this.props.store.getState();
         const { dispatch } = this.props.store;
-        const { contentUploaded } = store.app.sharedContent;
-
         const listInitReq = ['contacts', 'categories'];
 
-        if (!contentUploaded) {
-            listInitReq.forEach((item) => {
-                const req = fetch(`/api/content?name=${item}`);
-                req
-                    .then((res) => {
-                        return res.json();
-                    })
-                    .then((res) => {
-                        dispatch(saveContacts({
-                            [item]: res,
-                        }));
-                    })
-                    .catch((err) => console.log(err));
-            });
-        }
+        listInitReq.forEach((item) => {
+            const req = fetch(`/api/content?name=${item}`);
+            req
+                .then((res) => {
+                    return res.json();
+                })
+                .then((res) => {
+                    dispatch(saveContacts({
+                        [item]: res,
+                    }));
+                })
+                .catch((err) => console.log(err));
+        });
     }
 
     render() {

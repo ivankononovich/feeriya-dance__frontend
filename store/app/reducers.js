@@ -1,4 +1,8 @@
-import { SAVE_CONTACTS } from './actions';
+import { 
+    SAVE_CONTACTS,
+    CHANGE_STATE_CONTENT_UPLOADED,
+} from './actions';
+
 
 export default (store, action) => {
     switch(action.type) {
@@ -10,7 +14,7 @@ export default (store, action) => {
                     ...action.payload,
                 },
             };
-        
+
         default: 
             return {
                 ...store
