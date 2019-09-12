@@ -20,7 +20,7 @@
     {
       "nameRU": "танцы",
       "nameEN": "dance",
-      "subcategory": [
+      "subcategories": [
         {
           "nameRU": "тренировачная одежда",
           "nameEN": "trainer clothes",
@@ -92,7 +92,7 @@
     {
       "nameRU": "гимнастика",
       "nameEN": "gymnastics",
-      "subcategory": [
+      "subcategories": [
         {
           "nameRU": "купальники",
           "nameEN": "swimwear",
@@ -109,7 +109,7 @@
     {
       "nameRU": "фитнес",
       "nameEN": "fitness",
-      "subcategory": [
+      "subcategories": [
         {
           "nameRU": "лонг слив",
           "nameEN": "longsliv",
