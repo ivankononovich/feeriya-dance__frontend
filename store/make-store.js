@@ -1,6 +1,13 @@
-import rootReducer from './reducer';
+import rootReducers from './reducers';
 import { createStore } from "redux";
 
-const initialState = {};
+const initialState = {
+    app: {
+        sharedContent: {},
+    },
+    category: {
+        products: [],
+    },
+};
 
-export default () => createStore(rootReducer, initialState);
+export default () => createStore(rootReducers, initialState);

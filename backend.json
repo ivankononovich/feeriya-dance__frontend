@@ -1,0 +1,194 @@
+{
+  "contacts": [
+    {
+      "url": "tel:+375445121761",
+      "text": "+375 (44) 512 - 17 - 61",
+      "id": "jzsu9ehq"
+    },
+    {
+      "url": "mailto:feeriyadance76@gmail.com",
+      "text": "feeriyadance76@gmail.com",
+      "id": "jzsu9ehr"
+    },
+    {
+      "url": "https://www.instagram.com/feeriya_dance_/?utm_source=ig_profile_share&igshid=1infjveeispbm",
+      "text": "instagram",
+      "id": "jzsu9ehs"
+    }
+  ],
+  "categories": [
+    {
+      "nameRU": "танцы",
+      "nameEN": "dance",
+      "subcategories": [
+        {
+          "nameRU": "тренировачная одежда",
+          "nameEN": "trainer clothes",
+          "id": "2"
+        },
+        {
+          "nameRU": "туфли",
+          "nameEN": "shoes",
+          "id": "3"
+        },
+        {
+          "nameRU": "платья",
+          "nameEN": "dresses",
+          "id": "4"
+        },
+        {
+          "nameRU": "рубашки",
+          "nameEN": "shirts",
+          "id": "5"
+        },
+        {
+          "nameRU": "галстуки, бабочки",
+          "nameEN": "ties",
+          "id": "6"
+        },
+        {
+          "nameRU": "колготки",
+          "nameEN": "tigths",
+          "id": "7"
+        },
+        {
+          "nameRU": "наколенники",
+          "nameEN": "knee pads",
+          "id": "8"
+        },
+        {
+          "nameRU": "аксессуары для обуви",
+          "nameEN": "shoe accesories",
+          "id": "9"
+        },
+        {
+          "nameRU": "аксессуары для волос",
+          "nameEN": "hair accesories",
+          "id": "10"
+        },
+        {
+          "nameRU": "косметика",
+          "nameEN": "cosmetics",
+          "id": "11"
+        },
+        {
+          "nameRU": "накладные ресницы",
+          "nameEN": "tigths",
+          "id": "12"
+        },
+        {
+          "nameRU": "накладные ресницы",
+          "nameEN": "false eyelashes",
+          "id": "13"
+        },
+        {
+          "nameRU": "сумки и чехлы",
+          "nameEN": "bags and cases",
+          "id": "14"
+        }
+      ],
+      "id": "1"
+    },
+    {
+      "nameRU": "гимнастика",
+      "nameEN": "gymnastics",
+      "subcategories": [
+        {
+          "nameRU": "купальники",
+          "nameEN": "swimwear",
+          "id": "16"
+        },
+        {
+          "nameRU": "нижнее бельё",
+          "nameEN": "underwear",
+          "id": "17"
+        }
+      ],
+      "id": "15"
+    },
+    {
+      "nameRU": "фитнес",
+      "nameEN": "fitness",
+      "subcategories": [
+        {
+          "nameRU": "лонг слив",
+          "nameEN": "longsliv",
+          "id": "19"
+        },
+        {
+          "nameRU": "топы",
+          "nameEN": "tops",
+          "id": "20"
+        }
+      ],
+      "id": "18"
+    }
+  ],
+  "products": [
+    {
+      "nameRU": "туфли стандарт мужские",
+      "id": "p1",
+      "image": "product-1.jpg",
+      "categorize": ["1", "3", "15"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40"
+        }
+      ]
+    },
+    {
+      "nameRU": "автозагар аэротан",
+      "id": "p2",
+      "image": "icon-4.png",
+      "categorize": ["18", "15"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40"
+        }
+      ]
+    },
+    {
+      "nameRU": "купальник гимнастический",
+      "id": "p3",
+      "image": "product-1.jpg",
+      "categorize": ["15", "16", "18"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40"
+        }
+      ]
+    },
+    {
+      "nameRU": "топ",
+      "id": "p4",
+      "image": "product-1.jpg",
+      "categorize": ["15", "18", "20"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40"
+        }
+      ]
+    },
+    {
+      "nameRU": "лонг слив",
+      "id": "p5",
+      "image": "product-1.jpg",
+      "categorize": ["18", "19"],
+      "price": 150,
+      "options": [
+        {
+          "name": "РАЗМЕРЫ",
+          "value": "28 - 40"
+        }
+      ]
+    }
+  ]
+}
