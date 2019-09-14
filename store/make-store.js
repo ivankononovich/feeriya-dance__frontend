@@ -3,10 +3,11 @@ import { createStore } from "redux";
 
 const initialState = {
     app: {
-        sharedContent: {
-            contentUploaded: false,
-        },
-    }
+        sharedContent: {},
+    },
+    category: {
+        products: [],
+    },
 };
 
 export default () => createStore(rootReducers, initialState);

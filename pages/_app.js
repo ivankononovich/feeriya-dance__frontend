@@ -6,7 +6,7 @@ import fetch from 'isomorphic-unfetch';
 
 import makeStore from './../store/make-store';
 import {
-    saveContacts,
+    saveSharedContent,
 } from './../store/app/actions';
 
 class MyApp extends App {
@@ -29,7 +29,7 @@ class MyApp extends App {
                     return res.json();
                 })
                 .then((res) => {
-                    dispatch(saveContacts({
+                    dispatch(saveSharedContent({
                         [item]: res,
                     }));
                 })

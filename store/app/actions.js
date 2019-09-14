@@ -1,13 +1,13 @@
-const SAVE_CONTACTS = 'SAVE_CONTACTS';
+const SAVE_SHARED_CONTENT = 'SAVE_SHARED_CONTENT';
 
-function saveContacts(data) {
+function saveSharedContent(data) {
     return {
-        type: SAVE_CONTACTS,
+        type: SAVE_SHARED_CONTENT,
         payload: data,
     }
 }
 
 export {
-    SAVE_CONTACTS,
-    saveContacts,
+    SAVE_SHARED_CONTENT,
+    saveSharedContent,
 }

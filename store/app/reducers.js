@@ -1,12 +1,11 @@
 import { 
-    SAVE_CONTACTS,
-    CHANGE_STATE_CONTENT_UPLOADED,
+    SAVE_SHARED_CONTENT,
 } from './actions';
 
 
 export default (store, action) => {
     switch(action.type) {
-        case SAVE_CONTACTS:
+        case SAVE_SHARED_CONTENT:
             return {
                 ...store,
                 sharedContent: { 
