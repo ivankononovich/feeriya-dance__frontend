@@ -5,9 +5,9 @@ import Container from './../Container/Container';
 import Contacts from './../Contacts/ContactsContainer';
 import Categories from './../Categories/CategoriesContainer';
 
-export default (props) =>  
+export default () =>  
     <header className={ css.header }>
-        <Container additionalClasses='container_width-max'>
+        <Container additionalClasses={ ['container_width-max', 'container_bg_contacts'] }>
             <Contacts />
         </Container>
 
@@ -15,7 +15,13 @@ export default (props) =>
             <Link href='/index' as='/'>
                 <a>Main page link</a>
             </Link>
-            <Categories />
+        </Container>
+        
+        <Container additionalClasses={ ['container_width-max', 'container_categories-wrapper'] }>
+            <Container additionalClasses={ ['container_pos_rel', 'container_categories-container'] }>
+               
+                <Categories />
+            </Container>
         </Container>
     </header>
 

@@ -1,26 +1,28 @@
 import Link from 'next/link';
 
+import css from './categories.scss';
+
 
 export default ({ categories }) => {
-    let renderContent = <li>Loading categories...</li>;
+    let renderContent;
 
     if (categories) {
         renderContent = categories.map((category) => {
             const urlReq = `/category?id=${category.id}`;
 
             return (
-                <li key={ category.id }>
+                <li className={ css.categories__item } key={ category.id }>
                     <Link href={ urlReq }>
-                        <a>{ category.nameRU }</a>
+                        <a className={ css.categories__link }>{ category.nameRU }</a>
                     </Link>
                     
-                    <ul>
+                    <ul className={ css.categories__subcategories }>
                         {
                             category.subcategories.map((subcategory) => {
                                 return (
                                     <li key={ subcategory.id }>
                                         <Link href={ `${urlReq}-${subcategory.id}` }>
-                                            <a>{ subcategory.nameRU }</a>
+                                            <a className={ css['categories__subcategory-link'] }>{ subcategory.nameRU }</a>
                                         </Link>
                                     </li>
                                 );
@@ -33,7 +35,7 @@ export default ({ categories }) => {
     }
 
     return (
-        <ul>
+        <ul className={ css.categories }>
             { renderContent }
         </ul> 
     )
