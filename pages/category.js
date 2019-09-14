@@ -43,7 +43,7 @@ function CategoryPage({ reqProducts, products, saveProducts }) {
     
     return <>
         <Header />
-        <Container>
+        <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
         </Container>
     </>
