@@ -6,11 +6,11 @@ export default ({ categories }) => {
 
     if (categories) {
         renderContent = categories.map((category) => {
-            const urlReq = '/category?';
+            const urlReq = `/category?id=${category.id}`;
 
             return (
                 <li key={ category.id }>
-                    <Link href={ `${urlReq}id=${category.id}` }>
+                    <Link href={ urlReq }>
                         <a>{ category.nameRU }</a>
                     </Link>
                     
@@ -19,7 +19,7 @@ export default ({ categories }) => {
                             category.subcategories.map((subcategory) => {
                                 return (
                                     <li key={ subcategory.id }>
-                                        <Link href={ `${urlReq}id=${subcategory.id}` }>
+                                        <Link href={ `${urlReq}-${subcategory.id}` }>
                                             <a>{ subcategory.nameRU }</a>
                                         </Link>
                                     </li>
