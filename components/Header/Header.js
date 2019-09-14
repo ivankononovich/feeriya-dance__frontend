@@ -5,9 +5,9 @@ import Container from './../Container/Container';
 import Contacts from './../Contacts/ContactsContainer';
 import Categories from './../Categories/CategoriesContainer';
 
-export default (props) =>  
+export default () =>  
     <header className={ css.header }>
-        <Container additionalClasses='container_width-max'>
+        <Container additionalClasses={ ['container_width-max', 'container_bg_contacts'] }>
             <Contacts />
         </Container>
 
