@@ -15,7 +15,13 @@ export default () =>
             <Link href='/index' as='/'>
                 <a>Main page link</a>
             </Link>
-            <Categories />
+        </Container>
+        
+        <Container additionalClasses={ ['container_width-max', 'container_categories-wrapper'] }>
+            <Container additionalClasses={ ['container_pos_rel', 'container_categories-container'] }>
+               
+                <Categories />
+            </Container>
         </Container>
     </header>
 
