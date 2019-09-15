@@ -50,18 +50,24 @@ function CategoryPage({ reqProducts, products, saveProducts }) {
 }
 
 CategoryPage.getInitialProps = async (ctx) => {
-    let host = '';
+    const { products } = ctx.store.getState().category;
 
-    if (ctx.isServer) {
-        host = ctx.req.connection.encrypted ? 'https://' : 'http://';
-        host += ctx.req.headers.host;
-    }
+    if (!products.length) {
+        let host = '';
 
-    const req = await fetch(`${host}/api/content?name=products`);
-    const reqProducts = await req.json();
-
-    return {
-        reqProducts,
+        if (ctx.isServer) {
+            host = ctx.req.connection.encrypted ? 'https://' : 'http://';
+            host += ctx.req.headers.host;
+        }
+    
+        const req = await fetch(`${host}/api/content?name=products`);
+        const reqProducts = await req.json();
+    
+        return {
+            reqProducts,
+        }
+    } else {
+        return {};
     }
 }
 
