@@ -52,6 +52,25 @@
         }
     }
 
+    &__link {
+        font-size: 14px;
+        line-height: 3;
+        text-transform: lowercase;
+        text-decoration: none;
+        text-align: center;
+        color: #222222;
+        display: block;
+        margin-top: 10px;
+
+        &::first-letter {
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            color: #5983f0;
+        }
+    }
+
     &:hover {
         border-color: #eeeeee;
 

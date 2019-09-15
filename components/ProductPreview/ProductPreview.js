@@ -18,7 +18,7 @@ export default ({ image, nameRU, price, options, id }) =>
             }
             <li key='more-details'>
                 <Link href={ `/product?id=${id}` }>
-                    <a>Подробнее</a>
+                    <a className={ css['product-preview__link'] }>Подробнее</a>
                 </Link>
             </li>
         </ul>
