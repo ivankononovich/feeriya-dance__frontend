@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
+import Product from './../components/Product/Product';
 import { 
     saveProducts,
  } from "./../store/category/actions";
@@ -26,7 +27,7 @@ function ProductPage({ reqProducts, products, saveProducts }) {
                 return item.id === sortOption;
             });
 
-            renderContent = <h2>{ product.nameRU }</h2>;
+            renderContent = <Product {...product} />;
         } else {
             renderContent = <h2>Product not found</h2>;
         }
