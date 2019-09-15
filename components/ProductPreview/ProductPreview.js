@@ -1,7 +1,9 @@
+import Link from 'next/link';
+
 import css from './product-preview.scss';
 
 
-export default ({ image, nameRU, price, options }) => 
+export default ({ image, nameRU, price, options, id }) => 
     <div className={ css['product-preview'] }>
         <img src={ `/static/products/${image}` } alt={ nameRU } className={ css['product-preview__img'] }/>
         <span className={ css['product-preview__price'] }>{ price } бел.руб</span>
@@ -14,5 +16,10 @@ export default ({ image, nameRU, price, options }) =>
                     </li>
                 )
             }
+            <li key='more-details'>
+                <Link href={ `/product?id=${id}` }>
+                    <a className={ css['product-preview__link'] }>Подробнее</a>
+                </Link>
+            </li>
         </ul>
     </div>
