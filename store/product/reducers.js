@@ -5,12 +5,13 @@ import {
 export default (store, action) => {
     switch(action.type) {
         case ADD_PRODUCT_TO_BASKET:
-            const { listProducts, price } = store.basket;
+            const { listProducts } = store.basket;
+            const { product, price } = action.payload;
 
-            listProducts.push(action.payload.product);
-            store.basket.price += price;
+            listProducts.push(product);
+            store.basket.totalPrice += price;
 
-            localStorage.setItem('basket', store.basket);
+            localStorage.setItem('basket', JSON.stringify(store.basket));
             
             return {
                 ...store,
