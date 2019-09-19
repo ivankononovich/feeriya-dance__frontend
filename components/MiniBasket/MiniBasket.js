@@ -1,6 +1,9 @@
-export default ({ listProducts, totalPrice }) => 
-    <div>
-        Корзина<br />
-        Товаров {listProducts.length}<br />
-        Общая цена {totalPrice}<br />
+import css from './mini-basket.scss';
+
+
+export default ({ listProducts }) => 
+    <div className={ css['mini-basket'] }>
+        <span className={ css['mini-basket__text'] }>
+            Корзина: { listProducts.length ? listProducts.length : ' пустая' }
+        </span>
     </div>

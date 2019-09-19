@@ -21,8 +21,8 @@ export default () =>
         <Container additionalClasses={ ['container_width-max', 'container_categories-wrapper'] }>
             <Container additionalClasses={ ['container_pos_rel', 'container_categories-container'] }>
                 <Categories />
+                <MiniBasket />
             </Container>
-            <MiniBasket />
         </Container>
     </header>
 
