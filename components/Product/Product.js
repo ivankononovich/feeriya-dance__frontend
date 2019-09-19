@@ -20,6 +20,7 @@ export default ({ image, nameRU, price, options, id, addProductToBasket }) =>
                 }
             </ul>
             <button 
+                className={ css.product__buy }
                 onClick={ 
                     () => addProductToBasket({ product: id, price }) 
                 }
