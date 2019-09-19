@@ -10,6 +10,9 @@ import makeStore from './../store/make-store';
 import {
     saveSharedContent,
 } from './../store/app/actions';
+import {
+    initProductToBasket,
+} from './../store/product/actions';
 
 
 class MyApp extends App {
@@ -24,6 +27,8 @@ class MyApp extends App {
     componentDidMount() {
         const { dispatch } = this.props.store;
         const listInitReq = ['contacts', 'categories'];
+
+        dispatch(initProductToBasket());
 
         listInitReq.forEach((item) => {
             const req = fetch(`/api/content?name=${item}`);
