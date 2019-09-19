@@ -12,7 +12,7 @@ export default (store, action) => {
             store.basket.totalPrice += price;
 
             localStorage.setItem('basket', JSON.stringify(store.basket));
-            
+
             return {
                 ...store,
             };
