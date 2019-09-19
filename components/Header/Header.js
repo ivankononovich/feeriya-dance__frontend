@@ -4,6 +4,7 @@ import css from './header.scss';
 import Container from './../Container/Container';
 import Contacts from './../Contacts/ContactsContainer';
 import Categories from './../Categories/CategoriesContainer';
+import MiniBasket from './../MiniBasket/MiniBasketContainer';
 
 export default () =>  
     <header>
@@ -20,6 +21,7 @@ export default () =>
         <Container additionalClasses={ ['container_width-max', 'container_categories-wrapper'] }>
             <Container additionalClasses={ ['container_pos_rel', 'container_categories-container'] }>
                 <Categories />
+                <MiniBasket />
             </Container>
         </Container>
     </header>

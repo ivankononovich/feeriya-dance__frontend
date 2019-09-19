@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
-import Product from './../components/Product/Product';
+import Product from './../components/Product/ProductContainer';
 import { 
     saveProducts,
  } from "./../store/category/actions";

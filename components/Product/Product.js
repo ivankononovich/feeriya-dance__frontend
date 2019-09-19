@@ -1,7 +1,7 @@
 import css from './product.scss';
 
 
-export default ({ image, nameRU, price, options, id }) => 
+export default ({ image, nameRU, price, options, id, addProductToBasket }) => 
     <div className={ css.product }>
         <div className={ css.product__column }>
             <img className={ css.product__img } src={ `/static/products/${image}` } alt={ nameRU }/>
@@ -19,5 +19,11 @@ export default ({ image, nameRU, price, options, id }) =>
                     )
                 }
             </ul>
+            <button 
+                className={ css.product__buy }
+                onClick={ 
+                    () => addProductToBasket({ product: id, price }) 
+                }
+            >Добавить в корзину</button>
         </div>
     </div>
