@@ -1,8 +1,6 @@
 import fetch from 'isomorphic-unfetch';
 import { connect } from 'react-redux';
-// import { useRouter } from 'next/router';
 
-// import css from './../styles/category.scss';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
