@@ -5,4 +5,12 @@ import {
     addProductToBasket,
 } from './../../store/product/actions';
 
-export default connect(null, { addProductToBasket })(Product);
+
+function mapStateToProps(store) {
+    return {
+        listProductsInBasket: store.product.basket.listProducts,
+        totalPrice: store.product.basket.totalPrice,
+    }
+}
+
+export default connect(mapStateToProps, { addProductToBasket })(Product);
