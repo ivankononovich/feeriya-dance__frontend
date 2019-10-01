@@ -1,4 +1,5 @@
 .mini-basket {
+    transition: 0.3s;
     position: absolute;
     top: 0;
     right: 0;
@@ -10,10 +11,15 @@
     flex-direction: column;
     background-color: #ffe65a;
     padding: 0 20px;
+    text-decoration: none;
+    color: #222222;
 
     &__text {
         font-size: 12px;
-        color: #222222;
     }
 
+    &:hover {
+        background-color: #5983f0;
+        color: #ffffff;
+    }
 }

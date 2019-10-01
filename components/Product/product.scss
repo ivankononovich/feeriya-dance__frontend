@@ -69,5 +69,16 @@
       background-color: #3265e6;
       box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
     }
+
+    &_bought {
+      cursor: auto;
+      background-color: #ffe65a;
+      color: #222222;
+
+      &:hover {
+        background-color: #ffe65a;
+        box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+      } 
+    }
   }
 }
