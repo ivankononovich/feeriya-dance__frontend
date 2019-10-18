@@ -4,18 +4,19 @@ import { connect } from 'react-redux';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
+import Loader from './../components/Loader/Loader';
+
 import { 
     saveProducts,
- } from "./../store/category/actions";
+ } from './../store/category/actions';
 
 
 function BasketPage({ reqProducts, products, saveProducts, basket }) {
-    let renderContent = <h2>Loading products...</h2>;
+    let renderContent = <Loader />;
 
     if (!products.length) {
         if (reqProducts) {
             saveProducts(reqProducts);
-            renderContent = <h2>reqProducts</h2>;
         }
     } else {
         const sortOptions = basket.listProducts;
