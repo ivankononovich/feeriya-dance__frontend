@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch';
 import { connect } from 'react-redux';
 
+import css from './../styles/basket.scss';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
@@ -8,10 +9,13 @@ import Loader from './../components/Loader/Loader';
 
 import { 
     saveProducts,
- } from './../store/category/actions';
+} from './../store/category/actions';
+import {
+    removeProductToBasket,
+} from './../store/product/actions';
 
 
-function BasketPage({ reqProducts, products, saveProducts, basket }) {
+function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket, listProducts }) {
     let renderContent = <Loader />;
 
     if (!products.length) {
@@ -19,13 +23,25 @@ function BasketPage({ reqProducts, products, saveProducts, basket }) {
             saveProducts(reqProducts);
         }
     } else {
-        const sortOptions = basket.listProducts;
+        const sortOptions = listProducts;
 
         renderContent = products.filter(
             (item) => sortOptions.some((id) => id === item.id)
         )
         .map(
-            (item) => <ProductPreview { ...item } key={ item.id } />
+            (item) => {
+                return (
+                    <div className={ css['product-wrapper'] } key={ item.id } >
+                        <button 
+                            className={ css.button }
+                            onClick={ 
+                                () => removeProductToBasket({ product: item.id, price: item.price }) 
+                            }
+                        >Удалить из корзины &#9587;</button>
+                        <ProductPreview { ...item } />
+                    </div>
+                )
+            }
         );
     }
     
@@ -62,8 +78,9 @@ BasketPage.getInitialProps = async (ctx) => {
 function mapStateToProps(store) {
     return {
         products: store.category.products,
-        basket: store.product.basket,
+        listProducts: store.product.basket.listProducts,
+        totalPrice: store.product.basket.totalPrice,
     }
 }
 
-export default connect(mapStateToProps, { saveProducts })(BasketPage);
+export default connect(mapStateToProps, { saveProducts, removeProductToBasket, })(BasketPage);
