@@ -5,13 +5,15 @@ import { useRouter } from 'next/router';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import Product from './../components/Product/ProductContainer';
+import Loader from './../components/Loader/Loader';
+
 import { 
     saveProducts,
- } from "./../store/category/actions";
+ } from './../store/category/actions';
 
 
 function ProductPage({ reqProducts, products, saveProducts }) {
-    let renderContent = <h2>Loading product...</h2>;
+    let renderContent = <Loader />;;
 
     if (!products.length) {
         if (reqProducts) {
@@ -19,17 +21,20 @@ function ProductPage({ reqProducts, products, saveProducts }) {
         }
     } else {
         const router = useRouter();
+        let product;
 
         if(router.query.id) {
             const sortOption = router.query.id;
 
-            const product = products.find((item) => {
+            product = products.find((item) => {
                 return item.id === sortOption;
             });
+        }
 
+        if (product) {
             renderContent = <Product {...product} />;
         } else {
-            renderContent = <h2>Product not found</h2>;
+            renderContent = <h2>Товар не найден</h2>;
         }
     }
     
