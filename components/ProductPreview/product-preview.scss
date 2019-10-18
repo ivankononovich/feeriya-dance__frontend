@@ -73,7 +73,8 @@
 
   &:hover {
     border-color: #eeeeee;
-
+    z-index: 10;
+    
     .product-preview__options {
       display: block;
     }
