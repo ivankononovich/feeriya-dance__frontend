@@ -15,7 +15,7 @@ import {
 } from './../store/product/actions';
 
 
-function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket, listProducts }) {
+function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket, listProducts, totalPrice }) {
     let renderContent = <Loader />;
 
     if (!products.length) {
@@ -47,6 +47,13 @@ function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket
     
     return <>
         <Header />
+        {
+            products.length && renderContent ?
+                <Container>
+                    <h2 className={ css['full-price'] }>Итоговая цена: { totalPrice } .руб</h2>
+                </Container>
+            : ''
+        }
         <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
         </Container>
