@@ -2,22 +2,22 @@ import fetch from 'isomorphic-unfetch';
 import { connect } from 'react-redux';
 import { useRouter } from 'next/router';
 
-import css from './../styles/category.scss';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
+import Loader from './../components/Loader/Loader';
+
 import { 
     saveProducts,
- } from "./../store/category/actions";
+ } from './../store/category/actions';
 
 
 function CategoryPage({ reqProducts, products, saveProducts }) {
-    let renderContent = <h2>Loading products...</h2>;
+    let renderContent = <Loader />;;
     
     if (!products.length) {
         if (reqProducts) {
             saveProducts(reqProducts);
-            renderContent = <h2>reqProducts</h2>;
         }
     } else {
         const router = useRouter();
