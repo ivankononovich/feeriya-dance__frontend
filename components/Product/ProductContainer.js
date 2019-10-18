@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import Product from './Product';
 import {
     addProductToBasket,
+    removeProductToBasket,
 } from './../../store/product/actions';
 
 
@@ -13,4 +14,4 @@ function mapStateToProps(store) {
     }
 }
 
-export default connect(mapStateToProps, { addProductToBasket })(Product);
+export default connect(mapStateToProps, { addProductToBasket, removeProductToBasket, })(Product);

@@ -1,9 +1,8 @@
 import css from './product.scss';
 
 
-export default ({ image, nameRU, price, options, id, addProductToBasket, listProductsInBasket }) => {
+export default ({ image, nameRU, price, options, id, addProductToBasket, removeProductToBasket, listProductsInBasket }) => {
     const isShowProductBuy = !listProductsInBasket.some((item) => item === id);
-    console.log(listProductsInBasket, id, isShowProductBuy)
 
     return (
         <div className={ css.product }>
@@ -31,10 +30,18 @@ export default ({ image, nameRU, price, options, id, addProductToBasket, listPro
                                 () => addProductToBasket({ product: id, price }) 
                             }
                         >Добавить в корзину</button>
-                        : 
-                        <button className={ `${css.product__buy} ${css.product__buy_bought}` } >Товар в корзине &#10003;</button>
+                        : <>
+                            <button 
+                                className={ `${css.product__buy} ${css.product__buy_bought}` } 
+                            >Товар в корзине &#10003;</button>
+                            <button
+                                className={ `${css.product__remove}` } 
+                                onClick={ 
+                                    () => removeProductToBasket({ product: id, price }) 
+                                }
+                            >Удалить из корзины &#9587;</button>
+                        </>
                 }
-                
             </div>
         </div>
     );
