@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
+import Form from '../components/Form/FormContainer';
 import { 
     saveProducts,
  } from "./../store/category/actions";
@@ -33,6 +34,7 @@ function BasketPage({ reqProducts, products, saveProducts, basket }) {
         <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
         </Container>
+        <Form />
     </>
 }
 
