@@ -1,0 +1,11 @@
+.form {
+  margin: 0 auto;
+
+  &__input {
+    font-size: 25px;
+
+    &_err {
+      border: 3px solid red;
+    }
+  }
+}

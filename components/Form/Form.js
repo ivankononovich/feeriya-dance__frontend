@@ -1,17 +1,24 @@
 import { Component, createRef } from "react";
 
+import css from './form.scss';
+
 export default class extends Component {
     constructor(props) {
         super(props);
 
-        this.sendForm = this.sendForm.bind(this);
+        this.state = {
+            phoneValue: '+375',
+        }
 
+        this.sendForm = this.sendForm.bind(this);
+        this.handleChange = this.handleChange.bind(this);
+        
         this.form = createRef();
     }
 
     validationCheck(type, value) {
         const listFields = {
-        phone: /^[44|33|29|25][0-9]{8}$/
+        phone: /^\+375[44|33|29|25][0-9]{8}$/
         };
 
         return value.match(listFields[type]);
@@ -19,7 +26,9 @@ export default class extends Component {
 
     sendForm(event) {
         event.preventDefault();
-        const { form: { current: form } } = this;
+
+        const { current: form } = this.form;
+        const { elements: { phone } } = form;
         const inputs = [...form.querySelectorAll("input")];
         let message = "";
 
@@ -37,6 +46,7 @@ export default class extends Component {
             const { listProducts } = this.props;
             const botID = "1051580117:AAEPtvahxccJV6XUR1VXyOySNNhJTpuCrIQ";
             const chatId = "498967090";
+            phone.classList.remove(css.form__input_err);
             
             message += `protducts: \n`;
 
@@ -51,15 +61,27 @@ export default class extends Component {
             fetch(url, {
                 method: "POST"
             });
+        } else {
+            phone.classList.add(css.form__input_err);
         }
     }
 
+    handleChange() {
+        const { current: { elements: { phone } } } = this.form;
+        const { value } = phone;
+
+        this.setState({
+            phoneValue: value.replace(/[^\+|\d]/gi, ''),
+        });
+    }
+
     render() {
-        console.log(this.props);
+        const { phoneValue } = this.state;
+        
         return (
-            <form ref={this.form}>
-                <input type="text" name="phone" />
-                <button onClick={this.sendForm}>Send</button>
+            <form ref={this.form} className={css.form}>
+                <input className={css.form__input} type="text" name="phone" onChange={this.handleChange} value={phoneValue}/>
+                <button className={css.form__button} onClick={this.sendForm}>Send</button>
             </form>
         );
     }
