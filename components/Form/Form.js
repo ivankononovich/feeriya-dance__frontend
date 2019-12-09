@@ -1,4 +1,4 @@
-import { Component, createRef } from "react";
+import { Component, createRef } from 'react';
 
 import css from './form.scss';
 
@@ -7,7 +7,8 @@ export default class extends Component {
         super(props);
 
         this.state = {
-            phoneValue: '+375',
+            phoneValue: '',
+            status: '',
         }
 
         this.sendForm = this.sendForm.bind(this);
@@ -27,10 +28,13 @@ export default class extends Component {
     sendForm(event) {
         event.preventDefault();
 
+        const { status } = this.state;
+        if (status === 'pending') return;
+
         const { current: form } = this.form;
         const { elements: { phone } } = form;
-        const inputs = [...form.querySelectorAll("input")];
-        let message = "";
+        const inputs = [...form.querySelectorAll('input')];
+        let message = '';
 
         let isSomeNotValid = inputs.some(item => {
             const { name, value } = item;
@@ -44,11 +48,11 @@ export default class extends Component {
 
         if (!isSomeNotValid) {
             const { listProducts } = this.props;
-            const botID = "1051580117:AAEPtvahxccJV6XUR1VXyOySNNhJTpuCrIQ";
-            const chatId = "498967090";
+            const botID = '1051580117:AAEPtvahxccJV6XUR1VXyOySNNhJTpuCrIQ';
+            const chatId = '498967090';
             phone.classList.remove(css.form__input_err);
             
-            message += `protducts: \n`;
+            message += `products: \n`;
 
             listProducts.forEach((item) => {
                 message += `https://feeriya-dance.herokuapp.com/product?id=${item} \n`
@@ -59,11 +63,36 @@ export default class extends Component {
             )}`;
 
             fetch(url, {
-                method: "POST"
+                method: 'POST'
+            })
+            .then(({status}) => {
+                if (status === 200) {
+                    this.setState({
+                        status: 'send',
+                    });
+
+                    this.clearBasket();
+                } else {
+                    this.setState({
+                        status: 'err',
+                    });
+                }
+            })
+            
+            this.setState({
+                status: 'pending',
             });
         } else {
             phone.classList.add(css.form__input_err);
         }
+    }
+
+    clearBasket() {
+        const {listProducts, removeProductToBasket} = this.props;
+
+        [...listProducts].forEach((item) => {
+            removeProductToBasket({product: item, price: 1});
+        });
     }
 
     handleChange() {
@@ -76,13 +105,36 @@ export default class extends Component {
     }
 
     render() {
-        const { phoneValue } = this.state;
+        const { phoneValue, status } = this.state;
         
+        if (status === 'send') {
+            return (
+                <div className={css.successful}>
+                    Ваш заказ отправлен!
+                </div>
+            )
+        }
+
         return (
-            <form ref={this.form} className={css.form}>
-                <input className={css.form__input} type="text" name="phone" onChange={this.handleChange} value={phoneValue}/>
-                <button className={css.form__button} onClick={this.sendForm}>Send</button>
-            </form>
+            <>
+                <h2 className={css.title}>Оформление заказа</h2>
+                <form ref={this.form} className={css.form}>
+                    <div className={css.form__row}>
+                        <span className={css.form__text}>Телефон</span>
+                        <input 
+                            className={css.form__input} 
+                            type='text' 
+                            name='phone' 
+                            onChange={this.handleChange} 
+                            value={phoneValue}
+                            placeholder='+375XXXXXXXXX'
+                            disabled={status === 'pending' ? true : false}
+                        />
+                    </div>
+                   
+                    <button className={css.form__button} onClick={this.sendForm}>Отправить заказ</button>
+                </form>
+            </>
         );
     }
 }

@@ -10,7 +10,7 @@ import {
  } from "./../store/category/actions";
 
 
-function BasketPage({ reqProducts, products, saveProducts, basket }) {
+function BasketPage({ reqProducts, products, saveProducts, listProducts }) {
     let renderContent = <h2>Loading products...</h2>;
 
     if (!products.length) {
@@ -19,7 +19,7 @@ function BasketPage({ reqProducts, products, saveProducts, basket }) {
             renderContent = <h2>reqProducts</h2>;
         }
     } else {
-        const sortOptions = basket.listProducts;
+        const sortOptions = listProducts;
 
         renderContent = products.filter(
             (item) => sortOptions.some((id) => id === item.id)
@@ -28,13 +28,15 @@ function BasketPage({ reqProducts, products, saveProducts, basket }) {
             (item) => <ProductPreview { ...item } key={ item.id } />
         );
     }
-    
+
     return <>
         <Header />
         <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
         </Container>
-        <Form />
+        <Container >
+            <Form />
+        </Container>
     </>
 }
 
@@ -63,7 +65,8 @@ BasketPage.getInitialProps = async (ctx) => {
 function mapStateToProps(store) {
     return {
         products: store.category.products,
-        basket: store.product.basket,
+        listProducts: store.product.basket.listProducts,
+        totalPrice: store.product.basket.totalPrice,
     }
 }
 
