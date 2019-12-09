@@ -5,8 +5,8 @@ import css from './../styles/basket.scss';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
+import Form from '../components/Form/FormContainer';
 import Loader from './../components/Loader/Loader';
-
 import { 
     saveProducts,
 } from './../store/category/actions';
@@ -44,7 +44,7 @@ function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket
             }
         );
     }
-    
+
     return <>
         <Header />
         {
@@ -56,6 +56,9 @@ function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket
         }
         <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
+        </Container>
+        <Container >
+            <Form />
         </Container>
     </>
 }
