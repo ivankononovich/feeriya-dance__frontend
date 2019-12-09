@@ -96,11 +96,13 @@ export default class extends Component {
     }
 
     clearBasket() {
-        const { listProducts, removeProductToBasket } = this.props;
+        const { listProducts, removeProductToBasket, totalPrice } = this.props;
 
         [...listProducts].forEach((item) => {
-            removeProductToBasket({product: item, price: 1});
+            removeProductToBasket({product: item, price: 0});
         });
+
+        removeProductToBasket({product: '', price: totalPrice});
     }
 
     handleChange() {

@@ -48,9 +48,9 @@ function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket
     return <>
         <Header />
         {
-            products.length && renderContent ?
+            products.length && renderContent.length ?
                 <Container>
-                    <h2 className={ css['full-price'] }>Итоговая цена: { totalPrice } .руб</h2>
+                    <h2 className={ css['full-price'] }>Итоговая цена: { totalPrice } бел.руб</h2>
                 </Container>
             : ''
         }
