@@ -1,22 +1,26 @@
 import fetch from 'isomorphic-unfetch';
 import { connect } from 'react-redux';
 
+import css from './../styles/basket.scss';
 import Header from './../components/Header/Header';
 import Container from './../components/Container/Container';
 import ProductPreview from './../components/ProductPreview/ProductPreview';
 import Form from '../components/Form/FormContainer';
+import Loader from './../components/Loader/Loader';
 import { 
     saveProducts,
- } from "./../store/category/actions";
+} from './../store/category/actions';
+import {
+    removeProductToBasket,
+} from './../store/product/actions';
 
 
-function BasketPage({ reqProducts, products, saveProducts, listProducts }) {
-    let renderContent = <h2>Loading products...</h2>;
+function BasketPage({ reqProducts, products, saveProducts, removeProductToBasket, listProducts, totalPrice }) {
+    let renderContent = <Loader />;
 
     if (!products.length) {
         if (reqProducts) {
             saveProducts(reqProducts);
-            renderContent = <h2>reqProducts</h2>;
         }
     } else {
         const sortOptions = listProducts;
@@ -25,12 +29,31 @@ function BasketPage({ reqProducts, products, saveProducts, listProducts }) {
             (item) => sortOptions.some((id) => id === item.id)
         )
         .map(
-            (item) => <ProductPreview { ...item } key={ item.id } />
+            (item) => {
+                return (
+                    <div className={ css['product-wrapper'] } key={ item.id } >
+                        <button 
+                            className={ css.button }
+                            onClick={ 
+                                () => removeProductToBasket({ product: item.id, price: item.price }) 
+                            }
+                        >Удалить из корзины &#9587;</button>
+                        <ProductPreview { ...item } />
+                    </div>
+                )
+            }
         );
     }
 
     return <>
         <Header />
+        {
+            products.length && renderContent ?
+                <Container>
+                    <h2 className={ css['full-price'] }>Итоговая цена: { totalPrice } .руб</h2>
+                </Container>
+            : ''
+        }
         <Container additionalClasses={ ['container_product-preview-container'] }>
             { renderContent }
         </Container>
@@ -70,4 +93,4 @@ function mapStateToProps(store) {
     }
 }
 
-export default connect(mapStateToProps, { saveProducts })(BasketPage);
+export default connect(mapStateToProps, { saveProducts, removeProductToBasket, })(BasketPage);
