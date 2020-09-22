@@ -1,0 +1,1 @@
+web: DATABASE_URL=postgres://kxxpuqmcqydlbg:05d8ecbbd1d1d4feb612fd96fe1c6f20f27d2cd367cc586dc936fb717dd83408@ec2-23-23-182-18.compute-1.amazonaws.com:5432/d48apdi709nb5o node ./backend/server.js && node ./backend/pg.js
