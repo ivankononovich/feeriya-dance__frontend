@@ -1,12 +1,11 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import Categories from './Categories';
-
+import Categories from './Categories'
 
 function mapStateToProps(store) {
-    return {
-        categories: store.app.sharedContent.categories,
-    }
+  return {
+    categories: store.app.sharedContent.categories,
+  }
 }
 
-export default connect(mapStateToProps)(Categories);
+export default connect(mapStateToProps)(Categories)

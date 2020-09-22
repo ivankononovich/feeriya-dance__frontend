@@ -1,13 +1,10 @@
-const SAVE_SHARED_CONTENT = 'SAVE_SHARED_CONTENT';
+const SAVE_SHARED_CONTENT = 'SAVE_SHARED_CONTENT'
 
 function saveSharedContent(data) {
-    return {
-        type: SAVE_SHARED_CONTENT,
-        payload: data,
-    }
+  return {
+    type: SAVE_SHARED_CONTENT,
+    payload: data,
+  }
 }
 
-export {
-    SAVE_SHARED_CONTENT,
-    saveSharedContent,
-}
+export { SAVE_SHARED_CONTENT, saveSharedContent }

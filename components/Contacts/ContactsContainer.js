@@ -1,12 +1,11 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import Contacts from './Contacts';
-
+import Contacts from './Contacts'
 
 function mapStateToProps(store) {
-    return {
-        contacts: store.app.sharedContent.contacts,
-    }
+  return {
+    contacts: store.app.sharedContent.contacts,
+  }
 }
 
-export default connect(mapStateToProps)(Contacts);
+export default connect(mapStateToProps)(Contacts)

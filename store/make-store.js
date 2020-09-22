@@ -1,20 +1,19 @@
-import rootReducers from './reducers';
-import { createStore } from 'redux';
-
+import rootReducers from './reducers'
+import { createStore } from 'redux'
 
 const initialState = {
-    app: {
-        sharedContent: {},
+  app: {
+    sharedContent: {},
+  },
+  category: {
+    products: [],
+  },
+  product: {
+    basket: {
+      listProducts: [],
+      totalPrice: 0,
     },
-    category: {
-        products: [],
-    },
-    product: {
-        basket: {
-            listProducts: [],
-            totalPrice: 0,
-        },
-    }
-};
+  },
+}
 
-export default () => createStore(rootReducers, initialState);
+export default () => createStore(rootReducers, initialState)

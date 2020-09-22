@@ -1,80 +1,79 @@
-import fetch from 'isomorphic-unfetch';
-import { connect } from 'react-redux';
-import { useRouter } from 'next/router';
+import fetch from 'isomorphic-unfetch'
+import { connect } from 'react-redux'
+import { useRouter } from 'next/router'
 
-import Header from './../components/Header/Header';
-import Container from './../components/Container/Container';
-import ProductPreview from './../components/ProductPreview/ProductPreview';
-import Loader from './../components/Loader/Loader';
+import Header from './../components/Header/Header'
+import Container from './../components/Container/Container'
+import ProductPreview from './../components/ProductPreview/ProductPreview'
+import Loader from './../components/Loader/Loader'
 
-import { 
-    saveProducts,
- } from './../store/category/actions';
-
+import { saveProducts } from './../store/category/actions'
 
 function CategoryPage({ reqProducts, products, saveProducts }) {
-    let renderContent = <Loader />;;
-    
-    if (!products.length) {
-        if (reqProducts) {
-            saveProducts(reqProducts);
-        }
-    } else {
-        const router = useRouter();
+  let renderContent = <Loader />
 
-        if(router.query.id) {
-            const sortOptions = router.query.id.split('-');
-
-            products = products.filter((item) => {
-                let result = false;
-    
-                sortOptions.forEach((id) => {
-                    result = item.categorize.includes(id);
-                });
-        
-                return result ? item : false;
-            });
-        }
-
-        renderContent = products.map((item, index) => 
-            <ProductPreview {...item} key={ index }/>
-        );
+  if (!products.length) {
+    if (reqProducts) {
+      saveProducts(reqProducts)
     }
-    
-    return <>
-        <Header />
-        <Container additionalClasses={ ['container_product-preview-container'] }>
-            { renderContent }
-        </Container>
+  } else {
+    const router = useRouter()
+
+    if (router.query.id) {
+      const sortOptions = router.query.id.split('-')
+
+      products = products.filter((item) => {
+        let result = false
+
+        sortOptions.forEach((id) => {
+          result = item.categorize.includes(id)
+        })
+
+        return result ? item : false
+      })
+    }
+
+    renderContent = products.map((item, index) => (
+      <ProductPreview {...item} key={index} />
+    ))
+  }
+
+  return (
+    <>
+      <Header />
+      <Container additionalClasses={['container_product-preview-container']}>
+        {renderContent}
+      </Container>
     </>
+  )
 }
 
 CategoryPage.getInitialProps = async (ctx) => {
-    const { products } = ctx.store.getState().category;
+  const { products } = ctx.store.getState().category
 
-    if (!products.length) {
-        let host = '';
+  if (!products.length) {
+    let host = ''
 
-        if (ctx.isServer) {
-            host = ctx.req.connection.encrypted ? 'https://' : 'http://';
-            host += ctx.req.headers.host;
-        }
-    
-        const req = await fetch(`${host}/api/content?name=products`);
-        const reqProducts = await req.json();
-    
-        return {
-            reqProducts,
-        }
-    } else {
-        return {};
+    if (ctx.isServer) {
+      host = ctx.req.connection.encrypted ? 'https://' : 'http://'
+      host += ctx.req.headers.host
     }
+
+    const req = await fetch(`${host}/api/content?name=products`)
+    const reqProducts = await req.json()
+
+    return {
+      reqProducts,
+    }
+  } else {
+    return {}
+  }
 }
 
 function mapStateToProps(store) {
-    return {
-        products: store.category.products,
-    }
+  return {
+    products: store.category.products,
+  }
 }
 
-export default connect(mapStateToProps, { saveProducts })(CategoryPage);
+export default connect(mapStateToProps, { saveProducts })(CategoryPage)

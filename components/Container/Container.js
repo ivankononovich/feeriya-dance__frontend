@@ -1,18 +1,12 @@
-import css from './container.scss';
-
+import css from './container.scss'
 
 export default ({ children, additionalClasses }) => {
-    let listClasses = '';
+  let listClasses = ''
 
-    if (additionalClasses) {
-        listClasses = additionalClasses.map((item) => css[item]);
-        listClasses = listClasses.join(' ');
-    }
-    
+  if (additionalClasses) {
+    listClasses = additionalClasses.map((item) => css[item])
+    listClasses = listClasses.join(' ')
+  }
 
-    return (
-        <div className={`${css.container} ${listClasses}`}>
-            {children}
-        </div>
-    )
+  return <div className={`${css.container} ${listClasses}`}>{children}</div>
 }

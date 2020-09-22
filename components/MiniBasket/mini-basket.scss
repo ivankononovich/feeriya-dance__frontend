@@ -1,25 +1,25 @@
 .mini-basket {
-    transition: 0.3s;
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    min-width: 100px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    background-color: #ffe65a;
-    padding: 0 20px;
-    text-decoration: none;
-    color: #222222;
+  transition: 0.3s;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  min-width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: #ffe65a;
+  padding: 0 20px;
+  text-decoration: none;
+  color: #222222;
 
-    &__text {
-        font-size: 12px;
-    }
+  &__text {
+    font-size: 12px;
+  }
 
-    &:hover {
-        background-color: #5983f0;
-        color: #ffffff;
-    }
+  &:hover {
+    background-color: #5983f0;
+    color: #ffffff;
+  }
 }

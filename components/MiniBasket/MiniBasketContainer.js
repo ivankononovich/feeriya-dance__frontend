@@ -1,13 +1,12 @@
-import { connect } from 'react-redux';
+import { connect } from 'react-redux'
 
-import MiniBasket from './MiniBasket';
-
+import MiniBasket from './MiniBasket'
 
 function mapStateToProps(store) {
-    return {
-        listProducts: store.product.basket.listProducts,
-        totalPrice: store.product.basket.totalPrice,
-    }
+  return {
+    listProducts: store.product.basket.listProducts,
+    totalPrice: store.product.basket.totalPrice,
+  }
 }
 
-export default connect(mapStateToProps)(MiniBasket);
+export default connect(mapStateToProps)(MiniBasket)
