@@ -1,6 +1,6 @@
 import css from './container.scss'
 
-export default ({ children, additionalClasses }) => {
+const Container = ({ children, additionalClasses }) => {
   let listClasses = ''
 
   if (additionalClasses) {
@@ -10,3 +10,5 @@ export default ({ children, additionalClasses }) => {
 
   return <div className={`${css.container} ${listClasses}`}>{children}</div>
 }
+
+export default Container

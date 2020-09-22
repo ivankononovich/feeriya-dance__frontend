@@ -1,14 +1,15 @@
 import fetch from 'isomorphic-unfetch'
 import { connect } from 'react-redux'
 
-import css from './../styles/basket.scss'
-import Header from './../components/Header/Header'
-import Container from './../components/Container/Container'
-import ProductPreview from './../components/ProductPreview/ProductPreview'
-import Form from '../components/Form/FormContainer'
-import Loader from './../components/Loader/Loader'
-import { saveProducts } from './../store/category/actions'
-import { removeProductToBasket } from './../store/product/actions'
+import css from 'styles/basket.scss'
+import Header from 'components/Header/Header'
+import Container from 'components/Container/Container'
+import ProductPreview from 'components/ProductPreview/ProductPreview'
+import Form from 'components/Form/FormContainer'
+import Loader from 'components/Loader/Loader'
+import { saveProducts } from 'store/category/actions'
+import { removeProductToBasket } from 'store/product/actions'
+import { initializeStore } from 'store/make-store'
 
 function BasketPage({
   reqProducts,
@@ -69,14 +70,15 @@ function BasketPage({
 }
 
 BasketPage.getInitialProps = async (ctx) => {
-  const { products } = ctx.store.getState().category
+  const reduxStore = initializeStore()
+  const { products } = reduxStore.getState().category
 
   if (!products.length) {
     let host = ''
-
-    if (ctx.isServer) {
-      host = ctx.req.connection.encrypted ? 'https://' : 'http://'
-      host += ctx.req.headers.host
+    if (ctx.req) {
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
+        ctx.req.headers.host
+      }`
     }
 
     const req = await fetch(`${host}/api/content?name=products`)

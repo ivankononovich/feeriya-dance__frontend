@@ -1,6 +1,6 @@
 import css from './contacts.scss'
 
-export default ({ contacts }) => {
+const Contacts = ({ contacts }) => {
   let renderContent = <li>Loading contacts...</li>
 
   if (contacts) {
@@ -15,3 +15,5 @@ export default ({ contacts }) => {
 
   return <ul className={css.contacts}>{renderContent}</ul>
 }
+
+export default Contacts

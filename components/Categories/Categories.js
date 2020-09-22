@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import css from './categories.scss'
 
-export default ({ categories }) => {
+const Categories = ({ categories }) => {
   let renderContent
 
   if (categories) {
@@ -35,3 +35,5 @@ export default ({ categories }) => {
 
   return <ul className={css.categories}>{renderContent}</ul>
 }
+
+export default Categories

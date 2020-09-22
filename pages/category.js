@@ -2,12 +2,13 @@ import fetch from 'isomorphic-unfetch'
 import { connect } from 'react-redux'
 import { useRouter } from 'next/router'
 
-import Header from './../components/Header/Header'
-import Container from './../components/Container/Container'
-import ProductPreview from './../components/ProductPreview/ProductPreview'
-import Loader from './../components/Loader/Loader'
+import Header from 'components/Header/Header'
+import Container from 'components/Container/Container'
+import ProductPreview from 'components/ProductPreview/ProductPreview'
+import Loader from 'components/Loader/Loader'
 
-import { saveProducts } from './../store/category/actions'
+import { saveProducts } from 'store/category/actions'
+import { initializeStore } from 'store/make-store'
 
 function CategoryPage({ reqProducts, products, saveProducts }) {
   let renderContent = <Loader />
@@ -49,14 +50,15 @@ function CategoryPage({ reqProducts, products, saveProducts }) {
 }
 
 CategoryPage.getInitialProps = async (ctx) => {
-  const { products } = ctx.store.getState().category
+  const reduxStore = initializeStore()
+  const { products } = reduxStore.getState().category
 
   if (!products.length) {
     let host = ''
-
-    if (ctx.isServer) {
-      host = ctx.req.connection.encrypted ? 'https://' : 'http://'
-      host += ctx.req.headers.host
+    if (ctx.req) {
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
+        ctx.req.headers.host
+      }`
     }
 
     const req = await fetch(`${host}/api/content?name=products`)

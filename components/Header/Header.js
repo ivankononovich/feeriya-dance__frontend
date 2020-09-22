@@ -6,7 +6,7 @@ import Contacts from './../Contacts/ContactsContainer'
 import Categories from './../Categories/CategoriesContainer'
 import MiniBasket from './../MiniBasket/MiniBasketContainer'
 
-export default () => (
+const Header = () => (
   <header>
     <Container
       additionalClasses={['container_width-max', 'container_bg_contacts']}
@@ -15,7 +15,7 @@ export default () => (
     </Container>
 
     <Container>
-      <Link href="/index" as="/">
+      <Link href="/">
         <a className={css.header__logo}>Feeriya Dance</a>
       </Link>
     </Container>
@@ -38,3 +38,5 @@ export default () => (
     </Container>
   </header>
 )
+
+export default Header

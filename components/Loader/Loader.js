@@ -1,6 +1,6 @@
 import css from './loader.scss'
 
-export default () => (
+const Loader = () => (
   <div className={css.loader}>
     <span className={css['loader__dot-move']} />
     <div className={css['loader__dots-wrapper']}>
@@ -10,3 +10,5 @@ export default () => (
     </div>
   </div>
 )
+
+export default Loader

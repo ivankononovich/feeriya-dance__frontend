@@ -1,6 +1,6 @@
 import css from './product.scss'
 
-export default ({
+const Product = ({
   image,
   nameRU,
   price,
@@ -61,3 +61,5 @@ export default ({
     </div>
   )
 }
+
+export default Product

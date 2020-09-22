@@ -1,29 +1,20 @@
-import React from 'react'
-import { Provider } from 'react-redux'
-import App from 'next/app'
+import React, { useEffect } from 'react'
+import { Provider, useDispatch } from 'react-redux'
 import withRedux from 'next-redux-wrapper'
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 
-import './../styles/_app.scss'
-import makeStore from './../store/make-store'
+import 'styles/_app.scss'
+import { useStore } from 'store/make-store'
 
-import { saveSharedContent } from './../store/app/actions'
-import { initProductToBasket } from './../store/product/actions'
+import { saveSharedContent } from 'store/app/actions'
+import { initProductToBasket } from 'store/product/actions'
 
-class MyApp extends App {
-  static async getInitialProps({ Component, ctx }) {
-    const pageProps = Component.getInitialProps
-      ? await Component.getInitialProps(ctx)
-      : {}
+export default function App({ Component, pageProps }) {
+  const store = useStore(pageProps.initialReduxState)
+  const { dispatch } = store
 
-    return {
-      pageProps,
-    }
-  }
-
-  componentDidMount() {
-    const { dispatch } = this.props.store
+  useEffect(() => {
     const listInitReq = ['contacts', 'categories']
 
     dispatch(initProductToBasket())
@@ -43,25 +34,19 @@ class MyApp extends App {
         })
         .catch((err) => console.log(err))
     })
-  }
+  })
 
-  render() {
-    const { Component, pageProps, store } = this.props
-
-    return (
-      <>
-        <Head>
-          <link
-            href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
-            rel="stylesheet"
-          />
-        </Head>
-        <Provider store={store}>
-          <Component {...pageProps} />
-        </Provider>
-      </>
-    )
-  }
+  return (
+    <>
+      <Head>
+        <link
+          href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
+          rel="stylesheet"
+        />
+      </Head>
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
+    </>
+  )
 }
-
-export default withRedux(makeStore)(MyApp)

@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import css from './product-preview.scss'
 
-export default ({ image, nameRU, price, options, id }) => (
+const ProductPreview = ({ image, nameRU, price, options, id }) => (
   <div className={css['product-preview']}>
     <img
       src={`/static/products/${image}`}
@@ -26,3 +26,5 @@ export default ({ image, nameRU, price, options, id }) => (
     </ul>
   </div>
 )
+
+export default ProductPreview

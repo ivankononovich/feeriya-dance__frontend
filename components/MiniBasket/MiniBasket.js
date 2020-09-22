@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import css from './mini-basket.scss'
 
-export default ({ listProducts }) => (
+const MiniBasket = ({ listProducts }) => (
   <Link href="/basket">
     <a className={css['mini-basket']}>
       <span className={css['mini-basket__text']}>
@@ -11,3 +11,5 @@ export default ({ listProducts }) => (
     </a>
   </Link>
 )
+
+export default MiniBasket
