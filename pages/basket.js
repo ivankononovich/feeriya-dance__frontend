@@ -36,7 +36,10 @@ function BasketPage({
             <button
               className={css.button}
               onClick={() =>
-                removeProductToBasket({ product: item.nameEN, price: item.price })
+                removeProductToBasket({
+                  product: item.nameEN,
+                  price: item.price,
+                })
               }
             >
               Удалить из корзины &#9587;

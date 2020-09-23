@@ -1,4 +1,4 @@
-import { SAVE_SHARED_CONTENT } from './actions'
+import { SAVE_SHARED_CONTENT, LOGIN_ADMIN } from './actions'
 
 export default (store, action) => {
   switch (action.type) {
@@ -9,6 +9,12 @@ export default (store, action) => {
           ...store.sharedContent,
           ...action.payload,
         },
+      }
+
+    case LOGIN_ADMIN:
+      return {
+        ...store,
+        adminLogin: action.payload,
       }
 
     default:

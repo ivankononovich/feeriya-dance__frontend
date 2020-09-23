@@ -2,7 +2,14 @@ import Link from 'next/link'
 
 import css from './product-preview.scss'
 
-const ProductPreview = ({ image, nameRU,nameEN, price, options_name, options_value }) => (
+const ProductPreview = ({
+  image,
+  nameRU,
+  nameEN,
+  price,
+  options_name,
+  options_value,
+}) => (
   <div className={css['product-preview']}>
     <img
       src={`/static/products/${image}`}

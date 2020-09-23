@@ -6,7 +6,7 @@ import Contacts from './../Contacts/ContactsContainer'
 import Categories from './../Categories/CategoriesContainer'
 import MiniBasket from './../MiniBasket/MiniBasketContainer'
 
-const Header = () => (
+const Header = ({ adminLogin }) => (
   <header>
     <Container
       additionalClasses={['container_width-max', 'container_bg_contacts']}
@@ -33,6 +33,11 @@ const Header = () => (
         ]}
       >
         <Categories />
+        {adminLogin && (
+          <Link href="/creator-categories">
+            <a className={css['header__add-categories']}>+</a>
+          </Link>
+        )}
         <MiniBasket />
       </Container>
     </Container>

@@ -17,4 +17,20 @@
       letter-spacing: unset;
     }
   }
+
+  &__add-categories {
+    display: block;
+    border-radius: 3px;
+    border: none;
+    color: #ffffff;
+    background-color: #5983f0;
+    box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
+    font-weight: 700;
+    font-size: 14px;
+    margin: 5px 0;
+    padding: 10px;
+    cursor: pointer;
+    transition: margin 0.3s;
+    text-decoration: none;
+  }
 }

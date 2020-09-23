@@ -1,10 +1,15 @@
-import css from './../styles/index.scss'
-import Header from './../components/Header/Header'
+import { connect } from 'react-redux'
 
-const HomePage = () => (
+import css from 'styles/index.scss'
+import Header from 'components/Header/Header'
+
+const HomePage = ({ adminLogin }) => (
   <>
-    <Header />
+    <Header adminLogin={adminLogin} />
     <h1 className={css.title}>Main page</h1>
   </>
 )
-export default HomePage
+
+export default connect((store) => ({ adminLogin: store.app.adminLogin }))(
+  HomePage,
+)

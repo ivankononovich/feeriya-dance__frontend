@@ -1,4 +1,5 @@
 const express = require('express')
+const bodyParser = require('body-parser')
 const { parse } = require('url')
 const next = require('next')
 const client = require('./pg')
@@ -9,6 +10,17 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
+  server.use(bodyParser.json())
+
+  server.post('/api/add-categories', (req, res) => {
+    const { nameRU, nameEN, subcategories } = req.body
+
+    client.query(
+      `INSERT INTO categories (name_ru, name_en, subcategories) VALUES (${nameRU}, ${nameEN}, ${
+        subcategories.length ? subcategories.join(',') : '{}'
+      });`,
+    )
+  })
   server.get('/api/products', (req, res) => {
     client.query(`SELECT * FROM products`, (pgReq, pgRes) => {
       res.json(pgRes.rows)
