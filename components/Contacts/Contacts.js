@@ -5,7 +5,7 @@ const Contacts = ({ contacts }) => {
 
   if (contacts) {
     renderContent = contacts.map((item) => (
-      <li key={item.id}>
+      <li key={item.url}>
         <a href={item.url} className={css.contacts__link}>
           {item.text}
         </a>

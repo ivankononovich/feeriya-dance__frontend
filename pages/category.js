@@ -61,7 +61,7 @@ CategoryPage.getInitialProps = async (ctx) => {
       }`
     }
 
-    const req = await fetch(`${host}/api/content?name=products`)
+    const req = await fetch(`${host}/api/products`)
     const reqProducts = await req.json()
 
     return {

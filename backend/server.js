@@ -9,6 +9,11 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
+  server.get('/api/products', (req, res) => {
+    client.query(`SELECT * FROM products`, (pgReq, pgRes) => {
+      res.json(pgRes.rows)
+    })
+  })
   server.get('/api/contacts', (req, res) => {
     client.query(`SELECT * FROM contacts`, (pgReq, pgRes) => {
       res.json(pgRes.rows)

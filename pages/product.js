@@ -25,7 +25,7 @@ function ProductPage({ reqProducts, products, saveProducts }) {
       const sortOption = router.query.id
 
       product = products.find((item) => {
-        return item.id === sortOption
+        return item.nameEN === sortOption
       })
     }
 
@@ -56,7 +56,7 @@ ProductPage.getInitialProps = async (ctx) => {
       }`
     }
 
-    const req = await fetch(`${host}/api/content?name=products`)
+    const req = await fetch(`${host}/api/products`)
     const reqProducts = await req.json()
 
     return {

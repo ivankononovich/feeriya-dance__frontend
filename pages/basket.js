@@ -29,14 +29,14 @@ function BasketPage({
     const sortOptions = listProducts
 
     renderContent = products
-      .filter((item) => sortOptions.some((id) => id === item.id))
+      .filter((item) => sortOptions.some((id) => id === item.nameEN))
       .map((item) => {
         return (
-          <div className={css['product-wrapper']} key={item.id}>
+          <div className={css['product-wrapper']} key={item.nameEN}>
             <button
               className={css.button}
               onClick={() =>
-                removeProductToBasket({ product: item.id, price: item.price })
+                removeProductToBasket({ product: item.nameEN, price: item.price })
               }
             >
               Удалить из корзины &#9587;
@@ -81,7 +81,7 @@ BasketPage.getInitialProps = async (ctx) => {
       }`
     }
 
-    const req = await fetch(`${host}/api/content?name=products`)
+    const req = await fetch(`${host}/api/products`)
     const reqProducts = await req.json()
 
     return {
