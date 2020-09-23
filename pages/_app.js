@@ -20,7 +20,7 @@ export default function App({ Component, pageProps }) {
     dispatch(initProductToBasket())
 
     listInitReq.forEach((item) => {
-      const req = fetch(`/api/content?name=${item}`)
+      const req = fetch(`/api/${item}`)
       req
         .then((res) => {
           return res.json()
@@ -34,7 +34,7 @@ export default function App({ Component, pageProps }) {
         })
         .catch((err) => console.log(err))
     })
-  })
+  }, [])
 
   return (
     <>

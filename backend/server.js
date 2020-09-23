@@ -9,7 +9,16 @@ const app = next({ dev })
 const handle = app.getRequestHandler()
 
 app.prepare().then(() => {
-  server.get('api/content', (req, res) => {})
+  server.get('/api/contacts', (req, res) => {
+    client.query(`SELECT * FROM contacts`, (pgReq, pgRes) => {
+      res.json(pgRes.rows)
+    })
+  })
+  server.get('/api/categories', (req, res) => {
+    client.query(`SELECT * FROM categories`, (pgReq, pgRes) => {
+      res.json(pgRes.rows)
+    })
+  })
   server.get('*', (req, res) => {
     // Be sure to pass `true` as the second argument to `url.parse`.
     // This tells it to parse the query portion of the URL.
