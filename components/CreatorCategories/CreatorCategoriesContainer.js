@@ -5,6 +5,7 @@ import CreatorCategories from './CreatorCategories'
 function mapStateToProps(store) {
   return {
     categories: store.app.sharedContent.categories,
+    categoriesLength: store.app.sharedContent.categories?.length,
   }
 }
 

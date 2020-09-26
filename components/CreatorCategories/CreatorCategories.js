@@ -1,27 +1,40 @@
-import Link from 'next/link'
 import { useRef, useState } from 'react'
-
-import fetch from 'isomorphic-unfetch'
+import { useDispatch } from 'react-redux'
+import { removeCategory, addCategory } from 'store/app/actions'
 
 import css from './creator-categories.scss'
 
 const CreatorCategories = ({ categories }) => {
+  const dispatch = useDispatch()
   const [subCategories, setSubCategories] = useState({})
   const listKeys = Object.keys(subCategories)
   const inputName = useRef(null)
   const inputURL = useRef(null)
   let renderContent
 
+  const handleSave = () => {
+    dispatch(
+      addCategory({
+        name_ru: inputName.current.value,
+        name_en: inputURL.current.value,
+        subcategories: listKeys.map((key) => subCategories[key].name_en),
+      }),
+    )
+  }
+
+  const handleRemove = (name_en) => {
+    dispatch(removeCategory(name_en))
+  }
+
   if (categories) {
     renderContent = categories.map((category) => {
-      if (!category.subcategories.length) return null
       const include = subCategories[category.name_en]
 
       return (
         <li className={css['creator-categories__item']} key={category.name_en}>
           <span>{category.name_ru}</span>
           <button
-            className={css['creator-categories__item-add']}
+            className={css['creator-categories__item-button']}
             onClick={() => {
               if (include) {
                 const newProps = {
@@ -40,26 +53,14 @@ const CreatorCategories = ({ categories }) => {
           >
             {include ? 'x' : <>&#10003;</>}
           </button>
+          <button
+            className={`${css['creator-categories__item-button']} ${css['creator-categories__item-button_remove']}`}
+            onClick={() => handleRemove(category.name_en)}
+          >
+            Удалить категорию
+          </button>
         </li>
       )
-    })
-  }
-
-  const handleSave = () => {
-    const data = {
-      name_ru: inputName.current.value,
-      name_en: inputURL.current.value,
-      subcategories: listKeys.map((key) => subCategories[key].name_en),
-    }
-
-    console.log('# data', data)
-
-    fetch('/api/add-categories', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data),
     })
   }
 
@@ -98,7 +99,7 @@ const CreatorCategories = ({ categories }) => {
           </>
         )}
         <button
-          className={css['creator-categories__item-add']}
+          className={css['creator-categories__item-button']}
           onClick={handleSave}
         >
           Сохранить

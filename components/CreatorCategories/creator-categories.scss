@@ -30,7 +30,7 @@
     margin: 0 0 15px;
   }
 
-  &__item-add {
+  &__item-button {
     display: block;
     border-radius: 3px;
     border: none;
@@ -44,6 +44,11 @@
     cursor: pointer;
     transition: margin 0.3s;
     text-decoration: none;
+
+    &_remove {
+      background-color: #ffe65a;
+      color: #222222;
+    }
   }
 
   &__column {

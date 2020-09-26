@@ -21,6 +21,7 @@ export default class extends Component {
 
   static getDerivedStateFromProps(props, state) {
     state.basketIsEmpty = props.listProducts.length === 0
+    return state
   }
 
   validationCheck(type, value) {

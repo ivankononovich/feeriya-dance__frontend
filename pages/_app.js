@@ -1,13 +1,12 @@
 import React, { useEffect } from 'react'
-import { Provider, useDispatch } from 'react-redux'
-import withRedux from 'next-redux-wrapper'
+import { Provider } from 'react-redux'
 import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 
 import 'styles/_app.scss'
 import { useStore } from 'store/make-store'
 
-import { saveSharedContent } from 'store/app/actions'
+import { saveSharedContent, loadCategories } from 'store/app/actions'
 import { initProductToBasket } from 'store/product/actions'
 
 export default function App({ Component, pageProps }) {
@@ -15,9 +14,10 @@ export default function App({ Component, pageProps }) {
   const { dispatch } = store
 
   useEffect(() => {
-    const listInitReq = ['contacts', 'categories']
+    const listInitReq = ['contacts']
 
     dispatch(initProductToBasket())
+    dispatch(loadCategories())
 
     listInitReq.forEach((item) => {
       const req = fetch(`/api/${item}`)
