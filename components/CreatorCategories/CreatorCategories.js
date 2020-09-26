@@ -15,11 +15,11 @@ const CreatorCategories = ({ categories }) => {
   if (categories) {
     renderContent = categories.map((category) => {
       if (!category.subcategories.length) return null
-      const include = subCategories[category.nameEN]
+      const include = subCategories[category.name_en]
 
       return (
-        <li className={css['creator-categories__item']} key={category.nameEN}>
-          <span>{category.nameRU}</span>
+        <li className={css['creator-categories__item']} key={category.name_en}>
+          <span>{category.name_ru}</span>
           <button
             className={css['creator-categories__item-add']}
             onClick={() => {
@@ -27,13 +27,13 @@ const CreatorCategories = ({ categories }) => {
                 const newProps = {
                   ...subCategories,
                 }
-                delete newProps[category.nameEN]
+                delete newProps[category.name_en]
 
                 setSubCategories(newProps)
               } else {
                 setSubCategories({
                   ...subCategories,
-                  [category.nameEN]: category,
+                  [category.name_en]: category,
                 })
               }
             }}
@@ -47,9 +47,9 @@ const CreatorCategories = ({ categories }) => {
 
   const handleSave = () => {
     const data = {
-      nameRU: inputName.current.value,
-      nameEN: inputURL.current.value,
-      subcategories: listKeys.map((key) => subCategories[key].nameEN),
+      name_ru: inputName.current.value,
+      name_en: inputURL.current.value,
+      subcategories: listKeys.map((key) => subCategories[key].name_en),
     }
 
     console.log('# data', data)
@@ -87,10 +87,10 @@ const CreatorCategories = ({ categories }) => {
               {listKeys.map((key) => {
                 return (
                   <li
-                    key={subCategories[key].nameEN}
+                    key={subCategories[key].name_en}
                     className={css['creator-categories__sub-item']}
                   >
-                    - {subCategories[key].nameRU}
+                    - {subCategories[key].name_ru}
                   </li>
                 )
               })}

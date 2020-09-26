@@ -7,27 +7,27 @@ const Categories = ({ categories }) => {
 
   if (categories) {
     renderContent = categories.map((category) => {
-      const urlReq = `/category?id=${category.nameEN}`
+      const urlReq = `/category?id=${category.name_en}`
       if (!category.subcategories.length) return null
 
       return (
-        <li className={css.categories__item} key={category.nameEN}>
+        <li className={css.categories__item} key={category.name_en}>
           <Link href={urlReq}>
-            <a className={css.categories__link}>{category.nameRU}</a>
+            <a className={css.categories__link}>{category.name_ru}</a>
           </Link>
 
           <ul className={css.categories__subcategories}>
             {category.subcategories.map((subcategory) => {
               const findSubCategories = categories.find(
-                (c) => c.nameEN === subcategory,
+                (c) => c.name_en === subcategory,
               )
               if (!findSubCategories) return null
 
               return (
-                <li key={`${category.nameEN}-sub`}>
-                  <Link href={`${urlReq}-${findSubCategories.nameEN}`}>
+                <li key={`${category.name_en}-sub`}>
+                  <Link href={`${urlReq}-${findSubCategories.name_en}`}>
                     <a className={css['categories__subcategory-link']}>
-                      {findSubCategories.nameRU}
+                      {findSubCategories.name_ru}
                     </a>
                   </Link>
                 </li>

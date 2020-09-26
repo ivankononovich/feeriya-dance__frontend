@@ -25,7 +25,7 @@ function ProductPage({ reqProducts, products, saveProducts }) {
       const sortOption = router.query.id
 
       product = products.find((item) => {
-        return item.nameEN === sortOption
+        return item.name_en === sortOption
       })
     }
 

@@ -2,8 +2,8 @@ import css from './product.scss'
 
 const Product = ({
   image,
-  nameRU,
-  nameEN,
+  name_ru,
+  name_en,
   price,
   options_name,
   options_value,
@@ -11,7 +11,9 @@ const Product = ({
   removeProductToBasket,
   listProductsInBasket,
 }) => {
-  const isShowProductBuy = !listProductsInBasket.some((item) => item === nameEN)
+  const isShowProductBuy = !listProductsInBasket.some(
+    (item) => item === name_en,
+  )
 
   return (
     <div className={css.product}>
@@ -19,13 +21,13 @@ const Product = ({
         <img
           className={css.product__img}
           src={`/static/products/${image}`}
-          alt={nameRU}
+          alt={name_ru}
         />
       </div>
       <div
         className={`${css.product__column} ${css.product__column_margin_left}`}
       >
-        <h3 className={css.product__title}>{nameRU}</h3>
+        <h3 className={css.product__title}>{name_ru}</h3>
         <span className={css.product__price}>{price} бел.руб</span>
         <h4 className={css['product__about-product']}>О товаре</h4>
         <ul className={css.product__options}>
@@ -39,7 +41,7 @@ const Product = ({
         {isShowProductBuy ? (
           <button
             className={css.product__buy}
-            onClick={() => addProductToBasket({ product: nameEN, price })}
+            onClick={() => addProductToBasket({ product: name_en, price })}
           >
             Добавить в корзину
           </button>
@@ -52,7 +54,7 @@ const Product = ({
             </button>
             <button
               className={`${css.product__remove}`}
-              onClick={() => removeProductToBasket({ product: nameEN, price })}
+              onClick={() => removeProductToBasket({ product: name_en, price })}
             >
               Удалить из корзины &#9587;
             </button>

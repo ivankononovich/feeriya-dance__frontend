@@ -29,15 +29,15 @@ function BasketPage({
     const sortOptions = listProducts
 
     renderContent = products
-      .filter((item) => sortOptions.some((id) => id === item.nameEN))
+      .filter((item) => sortOptions.some((id) => id === item.name_en))
       .map((item) => {
         return (
-          <div className={css['product-wrapper']} key={item.nameEN}>
+          <div className={css['product-wrapper']} key={item.name_en}>
             <button
               className={css.button}
               onClick={() =>
                 removeProductToBasket({
-                  product: item.nameEN,
+                  product: item.name_en,
                   price: item.price,
                 })
               }
