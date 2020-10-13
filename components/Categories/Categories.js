@@ -32,7 +32,12 @@ const Categories = ({ categories }) => {
                       '-',
                     )}-${findSubCategories.name_en.replace(' ', '-')}-sub`}
                   >
-                    <Link href={`${urlReq}-${findSubCategories.name_en}`}>
+                    <Link
+                      href={`${urlReq}-${findSubCategories.name_en.replace(
+                        ' ',
+                        '-',
+                      )}`}
+                    >
                       <a className={css['categories__subcategory-link']}>
                         {findSubCategories.name_ru}
                       </a>

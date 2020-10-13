@@ -1,6 +1,7 @@
 import fetch from 'isomorphic-unfetch'
 import { connect } from 'react-redux'
 import { useRouter } from 'next/router'
+import Link from 'next/link'
 
 import Header from 'components/Header/Header'
 import Container from 'components/Container/Container'
@@ -10,7 +11,8 @@ import Loader from 'components/Loader/Loader'
 import { saveProducts } from 'store/category/actions'
 import { initializeStore } from 'store/make-store'
 
-function CategoryPage({ reqProducts, products, saveProducts }) {
+function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
+  const router = useRouter()
   let renderContent = <Loader />
 
   if (!products.length) {
@@ -18,8 +20,6 @@ function CategoryPage({ reqProducts, products, saveProducts }) {
       saveProducts(reqProducts)
     }
   } else {
-    const router = useRouter()
-
     if (router.query.id) {
       const sortOptions = router.query.id.split('-')
 
@@ -43,6 +43,29 @@ function CategoryPage({ reqProducts, products, saveProducts }) {
     <>
       <Header />
       <Container additionalClasses={['container_product-preview-container']}>
+        {adminLogin && (
+          <Link href={`/creator-products?id=${router.query.id}`}>
+            <a
+              style={{
+                display: 'block',
+                borderRadius: '3px',
+                border: 'none',
+                color: '#ffffff',
+                backgroundColor: '#5983f0',
+                boxShadow: '0 2px 8px 0 rgba(0, 0, 0, 0.25)',
+                fontWeight: '700',
+                fontSize: '14px',
+                margin: '5px 0',
+                padding: '10px',
+                cursor: 'pointer',
+                transition: 'margin 0.3s',
+                textDecoration: 'none',
+              }}
+            >
+              +
+            </a>
+          </Link>
+        )}
         {renderContent}
       </Container>
     </>
@@ -75,6 +98,7 @@ CategoryPage.getInitialProps = async (ctx) => {
 function mapStateToProps(store) {
   return {
     products: store.category.products,
+    adminLogin: store.app.adminLogin,
   }
 }
 
