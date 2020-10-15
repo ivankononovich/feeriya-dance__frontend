@@ -1,0 +1,31 @@
+.footer {
+  padding: 50px 0;
+  background: #222222;
+}
+
+.footerContacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  &__item {
+    max-width: 230px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 17px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+  }
+}
