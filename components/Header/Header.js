@@ -16,7 +16,7 @@ const Header = ({ adminLogin }) => (
 
     <Container>
       <Link href="/">
-        <a className={css.header__logo}>Feeriya Dance</a>
+        <a className={css.header__logo}>Мой магазин</a>
       </Link>
     </Container>
 

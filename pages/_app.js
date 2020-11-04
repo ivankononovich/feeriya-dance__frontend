@@ -6,7 +6,11 @@ import Head from 'next/head'
 import 'styles/_app.scss'
 import { useStore } from 'store/make-store'
 
-import { saveSharedContent, loadCategories } from 'store/app/actions'
+import {
+  saveSharedContent,
+  loadCategories,
+  loadProducts,
+} from 'store/app/actions'
 import { initProductToBasket } from 'store/product/actions'
 
 export default function App({ Component, pageProps }) {
@@ -18,6 +22,7 @@ export default function App({ Component, pageProps }) {
 
     dispatch(initProductToBasket())
     dispatch(loadCategories())
+    dispatch(loadProducts())
 
     listInitReq.forEach((item) => {
       const req = fetch(`/api/${item}`)

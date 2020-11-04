@@ -32,6 +32,21 @@ function loadCategories() {
   }
 }
 
+function loadProducts() {
+  return async (dispatch) => {
+    const res = await fetch(`/api/products`)
+    const products = await res.json()
+
+    dispatch(
+      saveSharedContent({
+        products,
+      }),
+    )
+
+    return res
+  }
+}
+
 function removeCategory(name_en) {
   return async (dispatch) => {
     const res = await fetch('/api/remove-categories', {
@@ -70,6 +85,7 @@ export {
   saveSharedContent,
   loginAdmin,
   loadCategories,
+  loadProducts,
   removeCategory,
   addCategory,
 }
