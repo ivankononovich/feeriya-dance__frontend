@@ -8,6 +8,7 @@ import ProductPreview from 'components/ProductPreview/ProductPreviewContainer'
 const HomePage = ({ adminLogin }) => (
   <>
     <Header adminLogin={adminLogin} />
+    <div className={css.image}>Картинка</div>
     <Container>
       <h2 className={css.title}>Лидеры продаж</h2>
       <ProductPreview />
