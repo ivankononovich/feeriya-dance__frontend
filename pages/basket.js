@@ -10,6 +10,7 @@ import Loader from 'components/Loader/Loader'
 import { saveProducts } from 'store/category/actions'
 import { removeProductToBasket } from 'store/product/actions'
 import { initializeStore } from 'store/make-store'
+import Footer from 'components/Footer/Footer'
 
 function BasketPage({
   reqProducts,
@@ -68,6 +69,7 @@ function BasketPage({
       <Container>
         <Form />
       </Container>
+      <Footer />
     </>
   )
 }

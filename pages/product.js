@@ -6,6 +6,7 @@ import Header from 'components/Header/Header'
 import Container from 'components/Container/Container'
 import Product from 'components/Product/ProductContainer'
 import Loader from 'components/Loader/Loader'
+import Footer from 'components/Footer/Footer'
 
 import { saveProducts } from 'store/category/actions'
 import { initializeStore } from 'store/make-store'
@@ -40,6 +41,7 @@ function ProductPage({ reqProducts, products, saveProducts }) {
     <>
       <Header />
       <Container>{renderContent}</Container>
+      <Footer />
     </>
   )
 }

@@ -7,6 +7,7 @@ import Header from 'components/Header/Header'
 import Container from 'components/Container/Container'
 import ProductPreview from 'components/ProductPreview/ProductPreview'
 import Loader from 'components/Loader/Loader'
+import Footer from 'components/Footer/Footer'
 
 import { saveProducts } from 'store/category/actions'
 import { initializeStore } from 'store/make-store'
@@ -68,6 +69,7 @@ function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
         )}
         {renderContent}
       </Container>
+      <Footer />
     </>
   )
 }

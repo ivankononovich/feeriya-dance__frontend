@@ -1,0 +1,54 @@
+.footer {
+  background: #222222;
+}
+
+.footerContacts {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 50px 0 25px;
+
+  &__item {
+    max-width: 230px;
+    margin-bottom: 25px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-size: 17px;
+    color: #ffffff;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    color: #ffffff;
+    text-align: center;
+    line-height: 25px;
+  }
+}
+
+.ownerInfo {
+  padding: 30px 0;
+  background-color: #000000;
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__title {
+    margin-bottom: 40px;
+    color: #5983f0;
+    text-align: center;
+  }
+
+  &__line {
+    color: #969696;
+    margin-top: 0;
+  }
+}
