@@ -11,6 +11,7 @@
   &__item {
     max-width: 230px;
     margin-bottom: 25px;
+    padding: 0 20px;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -18,6 +19,7 @@
   }
 
   &__title {
+    text-align: center;
     font-size: 17px;
     color: #ffffff;
     text-transform: uppercase;
@@ -48,7 +50,18 @@
   }
 
   &__line {
-    color: #969696;
     margin-top: 0;
+    padding: 0 20px;
+    color: #969696;
+    line-height: 25px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 500px) {
+  .footerContacts {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
 }

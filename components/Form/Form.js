@@ -100,9 +100,9 @@ export default class extends Component {
   clearBasket() {
     const { listProducts, removeProductToBasket, totalPrice } = this.props
 
-    ;[...listProducts].forEach((item) => {
-      removeProductToBasket({ product: item, price: 0 })
-    })
+      ;[...listProducts].forEach((item) => {
+        removeProductToBasket({ product: item, price: 0 })
+      })
 
     removeProductToBasket({ product: '', price: totalPrice })
   }
@@ -138,7 +138,7 @@ export default class extends Component {
 
     return (
       <>
-        <h2 className={css.title}>Оформление заказа</h2>
+        <h2 className={css['form-title']}>Оформление заказа</h2>
         <form ref={this.form} className={css.form}>
           <div className={css.form__row}>
             <span className={css.form__text}>Ваше имя</span>

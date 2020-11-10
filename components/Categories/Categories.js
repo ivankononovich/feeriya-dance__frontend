@@ -2,7 +2,8 @@ import Link from 'next/link'
 
 import css from './categories.scss'
 
-const Categories = ({ categories }) => {
+const Categories = ({ categories, showMenu, setShowMenu }) => {
+
   let renderContent
 
   if (categories) {
@@ -52,7 +53,7 @@ const Categories = ({ categories }) => {
     })
   }
 
-  return <ul className={css.categories}>{renderContent}</ul>
+  return <ul className={showMenu ? css['categories_active'] : css['categories']}>{renderContent}</ul>
 }
 
 export default Categories

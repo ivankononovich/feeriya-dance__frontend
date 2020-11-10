@@ -7,6 +7,11 @@
   font-size: 30px;
 }
 
+.form-title {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
 .form {
   margin: 0 auto 50px;
 
@@ -15,7 +20,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin: 0 auto 15px;
+    padding: 0 15px;
   }
 
   &__text {
@@ -51,6 +57,7 @@
   }
 
   &__button {
+    display: block;
     height: 48px;
     border-radius: 3px;
     border: none;
@@ -59,13 +66,27 @@
     box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.25);
     font-weight: 700;
     font-size: 14px;
-    margin: 20px 0 0;
+    margin: 40px auto 0;
     padding: 0 20px;
     cursor: pointer;
 
     &:hover {
       background-color: #3265e6;
       box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.25);
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .form {
+
+    &__row {
+      flex-direction: column;
+    }
+
+    &__text {
+      margin: 10px 0;
+      font-size: 20px;
     }
   }
 }

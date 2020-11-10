@@ -3,6 +3,10 @@
   width: 300px;
   padding: 20px 20px 0;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   box-sizing: border-box;
   border: 1px solid transparent;
   border-bottom: none;
@@ -73,14 +77,19 @@
     z-index: 10;
 
     .product-preview__options {
-      display: block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
     }
   }
 }
 
 .product-preview-list {
+  padding: 0;
   display: flex;
-  justify-content: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
   align-items: center;
   margin-bottom: 140px;
 }

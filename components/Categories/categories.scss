@@ -60,3 +60,36 @@
     }
   }
 }
+
+@media (max-width: 1024px) {
+  .categories {
+    display: none;
+
+      &_active {
+      position: absolute;
+      left: 0;
+      top: -158px;
+      z-index: 11;
+      width: 240px;
+      height: 100vh;
+      padding-top: 120px;
+      padding-left: 0;
+      list-style: none;
+      background-color: #222222;
+      transform: translateX(0);
+    }
+
+    &__link {
+      color: #ffffff;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .categories {
+
+    &_active {
+      top: -249px;
+    }
+  }
+}

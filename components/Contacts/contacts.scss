@@ -21,3 +21,9 @@
     }
   }
 }
+
+@media (max-width: 500px) {
+  .contacts {
+    flex-direction: column;
+  }
+}

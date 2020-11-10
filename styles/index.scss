@@ -16,3 +16,15 @@
   font-size: 90px;
   background-color: gray;
 }
+
+@media (max-width: 1024px) {
+  .image {
+    margin-top: 85px;
+  }
+}
+
+@media (max-width: 500px) {
+  .image {
+    font-size: 60px;
+  }
+}
