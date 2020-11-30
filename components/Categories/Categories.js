@@ -3,11 +3,17 @@ import Link from 'next/link'
 import css from './categories.scss'
 
 const Categories = ({ categories, showMenu, setShowMenu }) => {
+  // console.log('categories: ', categories)
 
   let renderContent
 
   if (categories) {
+    categories = categories.filter((category) => category.is_main_category)
+
+    // console.log('categories: ', categories)
+
     renderContent = categories.map((category) => {
+      // console.log('category ', category)
       const urlReq = `/category?id=${category.name_en.replace(' ', '-')}`
 
       return (
@@ -21,26 +27,35 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
           {!!category.subcategories.length && (
             <ul className={css.categories__subcategories}>
               {category.subcategories.map((subcategory) => {
-                const findSubCategories = categories.find(
+                {
+                  /* const findSubCategories = categories.find(
                   (c) => c.name_en === subcategory,
                 )
-                if (!findSubCategories) return null
+                if (!findSubCategories) return null */
+                }
+                if (!subcategory) return null
 
                 return (
                   <li
-                    key={`${category.name_en.replace(
+                    // key={`${category.name_en.replace(
+                    //   ' ',
+                    //   '-',
+                    // )}-${findSubCategories.name_en.replace(' ', '-')}-sub`}
+                    key={`${subcategory.replace(
                       ' ',
                       '-',
-                    )}-${findSubCategories.name_en.replace(' ', '-')}-sub`}
+                    )}-${subcategory.replace(' ', '-')}-sub`}
                   >
                     <Link
-                      href={`${urlReq}-${findSubCategories.name_en.replace(
-                        ' ',
-                        '-',
-                      )}`}
+                      // href={`${urlReq}-${findSubCategories.name_en.replace(
+                      //   ' ',
+                      //   '-',
+                      // )}`}
+                      href={`${urlReq}-${subcategory}`}
                     >
                       <a className={css['categories__subcategory-link']}>
-                        {findSubCategories.name_ru}
+                        {/* {findSubCategories.name_ru} */}
+                        {subcategory}
                       </a>
                     </Link>
                   </li>
@@ -53,7 +68,13 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
     })
   }
 
-  return <ul className={showMenu ? css['categories_active'] : css['categories']}>{renderContent}</ul>
+  // console.log('categories: ', renderContent)
+
+  return (
+    <ul className={showMenu ? css['categories_active'] : css['categories']}>
+      {renderContent}
+    </ul>
+  )
 }
 
 export default Categories

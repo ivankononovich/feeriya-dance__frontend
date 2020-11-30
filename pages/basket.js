@@ -62,8 +62,8 @@ function BasketPage({
           </h2>
         </Container>
       ) : (
-          ''
-        )}
+        ''
+      )}
       <Container additionalClasses={['container_product-preview-container']}>
         {renderContent}
       </Container>
@@ -82,8 +82,9 @@ BasketPage.getInitialProps = async (ctx) => {
   if (!products.length) {
     let host = ''
     if (ctx.req) {
-      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${ctx.req.headers.host
-        }`
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
+        ctx.req.headers.host
+      }`
     }
 
     const req = await fetch(`${host}/api/products`)

@@ -33,8 +33,12 @@ const Product = ({
         <ul className={css.product__options}>
           {options_name.map((item, index) => (
             <li key={`${options_value[index]}-${item}`}>
-              <span className={css.['product__description']} key="name">{item}</span>{' '}
-              <span className={css.['product__description']} key="value">{options_value[index]}</span>
+              <span className={css['product__description']} key="name">
+                {item}
+              </span>{' '}
+              <span className={css['product__description']} key="value">
+                {options_value[index]}
+              </span>
             </li>
           ))}
         </ul>
@@ -46,20 +50,20 @@ const Product = ({
             Добавить в корзину
           </button>
         ) : (
-            <>
-              <button
-                className={`${css.product__buy} ${css.product__buy_bought}`}
-              >
-                Товар в корзине &#10003;
+          <>
+            <button
+              className={`${css.product__buy} ${css.product__buy_bought}`}
+            >
+              Товар в корзине &#10003;
             </button>
-              <button
-                className={`${css.product__remove}`}
-                onClick={() => removeProductToBasket({ product: name_en, price })}
-              >
-                Удалить из корзины &#9587;
+            <button
+              className={`${css.product__remove}`}
+              onClick={() => removeProductToBasket({ product: name_en, price })}
+            >
+              Удалить из корзины &#9587;
             </button>
-            </>
-          )}
+          </>
+        )}
       </div>
     </div>
   )

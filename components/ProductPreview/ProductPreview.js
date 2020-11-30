@@ -11,7 +11,8 @@ const ProductPreview = ({
   // options_value,
   products,
 }) => {
-  if (!products) return <div>Загрузка товаров...</div>
+  if (!products || typeof products === 'undefined')
+    return <div>Загрузка товаров...</div>
   let renderContent
   renderContent = products.map((product, i) => {
     return (

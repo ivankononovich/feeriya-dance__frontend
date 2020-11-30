@@ -65,7 +65,7 @@
   .categories {
     display: none;
 
-      &_active {
+    &_active {
       position: absolute;
       left: 0;
       top: -158px;
@@ -87,7 +87,6 @@
 
 @media (max-width: 500px) {
   .categories {
-
     &_active {
       top: -249px;
     }
