@@ -20,7 +20,13 @@ const Header = ({ adminLogin }) => {
 
       <Container>
         {/* <BurgerMenu /> */}
-        <div className={css.burger} onClick={() => setShowMenu(!showMenu)}>
+        <div
+          className={css.burger}
+          onClick={() => {
+            setShowMenu(!showMenu)
+            document.body.style.overflow = !showMenu ? 'hidden' : 'initial'
+          }}
+        >
           <div className={css.burger__line}></div>
           <div className={css.burger__line}></div>
           <div className={css.burger__line}></div>

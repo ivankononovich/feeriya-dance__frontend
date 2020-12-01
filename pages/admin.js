@@ -38,7 +38,7 @@ function Admin({ loginAdmin, adminLogin }) {
     })
 
     const json = await response.json()
-    console.log(json)
+    // console.log(json)
 
     if (json === 'user is admin') {
       loginAdmin(true)

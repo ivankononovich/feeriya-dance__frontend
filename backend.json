@@ -129,11 +129,7 @@
       "nameRU": "туфли стандарт мужские",
       "id": "p1",
       "image": "product-1.jpg",
-      "categorize": [
-        "1",
-        "3",
-        "15"
-      ],
+      "categorize": ["1", "3", "15"],
       "price": 150,
       "options": [
         {
@@ -146,10 +142,7 @@
       "nameRU": "автозагар аэротан",
       "id": "p2",
       "image": "product-1.jpg",
-      "categorize": [
-        "18",
-        "15"
-      ],
+      "categorize": ["18", "15"],
       "price": 150,
       "options": [
         {
@@ -162,11 +155,7 @@
       "nameRU": "купальник гимнастический",
       "id": "p3",
       "image": "product-1.jpg",
-      "categorize": [
-        "15",
-        "16",
-        "18"
-      ],
+      "categorize": ["15", "16", "18"],
       "price": 150,
       "options": [
         {
@@ -179,11 +168,7 @@
       "nameRU": "топ",
       "id": "p4",
       "image": "product-1.jpg",
-      "categorize": [
-        "15",
-        "18",
-        "20"
-      ],
+      "categorize": ["15", "18", "20"],
       "price": 150,
       "options": [
         {
@@ -196,10 +181,7 @@
       "nameRU": "лонг слив",
       "id": "p5",
       "image": "product-1.jpg",
-      "categorize": [
-        "18",
-        "19"
-      ],
+      "categorize": ["18", "19"],
       "price": 150,
       "options": [
         {

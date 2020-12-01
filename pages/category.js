@@ -13,7 +13,7 @@ import { saveProducts } from 'store/category/actions'
 import { initializeStore } from 'store/make-store'
 
 function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
-  console.log(products)
+  // console.log(products)
   const router = useRouter()
   let renderContent = <Loader />
 
@@ -38,12 +38,12 @@ function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
         return result ? item : false
       })
     }
-    console.log('#Products ', products)
+    // console.log('#Products ', products)
     // renderContent = products.map((item, index) => {
     //   return <ProductPreview {...item} key={index} />
     //   // return <ProductPreview products={...item} key={index} />
     // })
-    console.log('aaza', renderContent)
+    // console.log('aaza', renderContent)
 
     renderContent = <ProductPreview products={products} />
   }

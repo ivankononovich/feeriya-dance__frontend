@@ -13,6 +13,7 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
     // console.log('categories: ', categories)
 
     renderContent = categories.map((category) => {
+      console.log(category.subcategories)
       // console.log('category ', category)
       const urlReq = `/category?id=${category.name_en.replace(' ', '-')}`
 
@@ -21,9 +22,13 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
           className={css.categories__item}
           key={category.name_en.replace(' ', '-')}
         >
-          <Link href={urlReq}>
+          {/* <Link href={urlReq}>
             <a className={css.categories__link}>{category.name_ru}</a>
-          </Link>
+          </Link> */}
+          {/* <Link href={category.subcategories.length >= 1 ? '' : urlReq}>
+            <a className={css.categories__link}>{category.name_ru}</a>
+          </Link> */}
+          <div className={css.categories__link}>{category.name_ru}</div>
           {!!category.subcategories.length && (
             <ul className={css.categories__subcategories}>
               {category.subcategories.map((subcategory) => {

@@ -50,6 +50,7 @@
     line-height: 45px;
     display: block;
     padding: 0 20px;
+    cursor: default;
 
     &::first-letter {
       text-transform: uppercase;
@@ -82,6 +83,11 @@
     &__link {
       color: #ffffff;
     }
+
+    &__subcategories {
+      top: 40%;
+      box-shadow: none;
+    }
   }
 }
 
@@ -89,6 +95,7 @@
   .categories {
     &_active {
       top: -249px;
+      padding-top: 70px;
     }
   }
 }
