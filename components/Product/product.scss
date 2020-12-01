@@ -76,6 +76,8 @@
       cursor: auto;
       background-color: #ffe65a;
       color: #222222;
+      width: 200px;
+      margin: 20px 10px;
 
       &:hover {
         background-color: #ffe65a;
@@ -85,7 +87,8 @@
   }
 
   &__remove {
-    margin-left: 20px;
+    margin: 20px 10px;
+    width: 200px;
   }
 
   &__about-product {

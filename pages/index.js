@@ -11,8 +11,37 @@ const HomePage = ({ adminLogin }) => (
     <Header adminLogin={adminLogin} />
     <div className={css.image}>Картинка</div>
     <Container>
-      <h2 className={css.title}>Лидеры продаж</h2>
-      <ProductPreview />
+      <h2 className={css.title}>О нас</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
+        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
+        est temporibus reprehenderit, ratione delectus!
+      </p>
     </Container>
     <Footer />
   </>

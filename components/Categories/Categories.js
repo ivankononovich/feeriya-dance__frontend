@@ -58,7 +58,12 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
                       // )}`}
                       href={`${urlReq}-${subcategory}`}
                     >
-                      <a className={css['categories__subcategory-link']}>
+                      <a
+                        className={css['categories__subcategory-link']}
+                        onClick={() =>
+                          document.querySelector('.burger').click()
+                        }
+                      >
                         {/* {findSubCategories.name_ru} */}
                         {subcategory}
                       </a>
