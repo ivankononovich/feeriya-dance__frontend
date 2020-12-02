@@ -58,8 +58,8 @@ export default class extends Component {
 
     if (!isSomeNotValid) {
       const { listProducts } = this.props
-      const botID = '1051580117:AAEPtvahxccJV6XUR1VXyOySNNhJTpuCrIQ'
-      const chatId = '498967090'
+      const botID = '1475044414:AAH3o2vbW4qULw4KfccOejJMkslYQDWWE5g'
+      const chatId = '722454253'
       phone.classList.remove(css.form__input_err)
 
       message += `products: \n`
@@ -100,9 +100,9 @@ export default class extends Component {
   clearBasket() {
     const { listProducts, removeProductToBasket, totalPrice } = this.props
 
-    ;[...listProducts].forEach((item) => {
-      removeProductToBasket({ product: item, price: 0 })
-    })
+      ;[...listProducts].forEach((item) => {
+        removeProductToBasket({ product: item, price: 0 })
+      })
 
     removeProductToBasket({ product: '', price: totalPrice })
   }

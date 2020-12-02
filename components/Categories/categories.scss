@@ -85,7 +85,7 @@
     }
 
     &__subcategories {
-      top: 40%;
+      top: 38%;
       box-shadow: none;
     }
   }
@@ -96,6 +96,10 @@
     &_active {
       top: -249px;
       padding-top: 70px;
+    }
+
+    &__subcategories {
+      top: 33%;
     }
   }
 }

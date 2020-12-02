@@ -28,7 +28,7 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
           {/* <Link href={category.subcategories.length >= 1 ? '' : urlReq}>
             <a className={css.categories__link}>{category.name_ru}</a>
           </Link> */}
-          <div className={css.categories__link}>{category.name_ru}</div>
+          <a className={css.categories__link}>{category.name_ru}</a>
           {!!category.subcategories.length && (
             <ul className={css.categories__subcategories}>
               {category.subcategories.map((subcategory) => {
