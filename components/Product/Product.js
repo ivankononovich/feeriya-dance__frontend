@@ -6,7 +6,8 @@ const Product = ({
   name_en,
   price,
   options_name,
-  options_value,
+  // options_value,
+  text,
   addProductToBasket,
   removeProductToBasket,
   listProductsInBasket,
@@ -30,7 +31,7 @@ const Product = ({
         <h3 className={css.product__title}>{name_ru}</h3>
         <span className={css.product__price}>{price} бел.руб</span>
         <h4 className={css['product__about-product']}>О товаре</h4>
-        <ul className={css.product__options}>
+        {/* <ul className={css.product__options}>
           {options_name.map((item, index) => (
             <li key={`${options_value[index]}-${item}`}>
               <span className={css['product__description']} key="name">
@@ -41,7 +42,21 @@ const Product = ({
               </span>
             </li>
           ))}
-        </ul>
+        </ul> */}
+        {/* <ul className={css.product__options}>
+          {options_name.map((item, index) => (
+            <li key={`${options_value[index]}-${item}`}>
+              <span className={css['product__description']} key="name">
+                {item}
+              </span>{' '}
+              <span className={css['product__description']} key="value">
+                {options_value[index]}
+              </span>
+            </li>
+          ))}
+        </ul> */}
+
+        <p className={css.product__text}>{text}</p>
         {isShowProductBuy ? (
           <button
             className={css.product__buy}

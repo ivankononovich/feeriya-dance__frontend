@@ -16,7 +16,7 @@ const ProductPreview = ({
   let renderContent
   renderContent = products.map((product, i) => {
     return (
-      <div className={css['product-preview']}>
+      <li className={css['product-preview']} key={i}>
         <img
           src={`/static/products/${product.image}`}
           alt={product.name_ru}
@@ -28,7 +28,7 @@ const ProductPreview = ({
         <h3 className={css['product-preview__prod-title']}>
           {product.name_ru}
         </h3>
-        <ul className={css['product-preview__options']}>
+        {/* <ul className={css['product-preview__options']}>
           {product.options_name.map((item, index) => (
             <li key={`${product.options_value[index]}-${item}`}>
               <span key="name">{item}:</span>{' '}
@@ -42,8 +42,11 @@ const ProductPreview = ({
               <a className={css['product-preview__link']}>Подробнее</a>
             </Link>
           </li>
-        </ul>
-      </div>
+        </ul> */}
+        <Link href={`/product?id=${product.name_en}`}>
+          <a className={css['product-preview__link']}>Подробнее</a>
+        </Link>
+      </li>
     )
   })
 

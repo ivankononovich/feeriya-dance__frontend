@@ -129,7 +129,7 @@ export default class extends Component {
     const { phoneValue, nameValue, status, basketIsEmpty } = this.state
 
     if (status === 'send') {
-      return <div className={css.successful}>Ваш заказ отправлен!</div>
+      return <div className={css.successful}>Ваш заказ отправлен! Вам перезвонят в течение 10 минут!</div>
     }
 
     if (basketIsEmpty) {

@@ -26,6 +26,7 @@ const Footer = () => {
           </div>
         </div>
       </Container>
+      <div style={{ color: 'red' }}>Оплата</div>
       <div className={css.ownerInfo}>
         <Container>
           <h3 className={css.ownerInfo__title}>О нашем магазине</h3>

@@ -1,7 +1,7 @@
 .product-preview {
   position: relative;
   width: 300px;
-  padding: 20px 20px 0;
+  padding: 20px;
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
@@ -9,7 +9,6 @@
   flex-direction: column;
   box-sizing: border-box;
   border: 1px solid transparent;
-  border-bottom: none;
   background-color: #ffffff;
 
   &__img {
@@ -73,7 +72,7 @@
   }
 
   &:hover {
-    border-color: #eeeeee;
+    border: 1px solid #eeeeee;
     z-index: 10;
 
     .product-preview__options {
@@ -91,5 +90,4 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
-  margin-bottom: 140px;
 }
