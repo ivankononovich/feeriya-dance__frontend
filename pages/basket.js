@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-unfetch'
 import { connect } from 'react-redux'
+import Head from 'next/head'
 
 import css from 'styles/basket.scss'
 import Header from 'components/Header/Header'
@@ -54,6 +55,9 @@ function BasketPage({
 
   return (
     <>
+      <Head>
+        <title>Клякса | Корзина</title>
+      </Head>
       <Header />
       {products.length && renderContent.length ? (
         <Container>
@@ -62,8 +66,8 @@ function BasketPage({
           </h2>
         </Container>
       ) : (
-        ''
-      )}
+          ''
+        )}
       <Container additionalClasses={['container_product-preview-container']}>
         {renderContent}
       </Container>
@@ -82,9 +86,8 @@ BasketPage.getInitialProps = async (ctx) => {
   if (!products.length) {
     let host = ''
     if (ctx.req) {
-      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
-        ctx.req.headers.host
-      }`
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${ctx.req.headers.host
+        }`
     }
 
     const req = await fetch(`${host}/api/products`)

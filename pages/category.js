@@ -2,6 +2,7 @@ import fetch from 'isomorphic-unfetch'
 import { connect } from 'react-redux'
 import { useRouter } from 'next/router'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import Header from 'components/Header/Header'
 import Container from 'components/Container/Container'
@@ -50,6 +51,9 @@ function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
 
   return (
     <>
+      <Head>
+        <title>Клякса | Игрушки</title>
+      </Head>
       <Header />
       <Container additionalClasses={['container_product-preview-container']}>
         {adminLogin && (
@@ -89,9 +93,8 @@ CategoryPage.getInitialProps = async (ctx) => {
   if (!products.length) {
     let host = ''
     if (ctx.req) {
-      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
-        ctx.req.headers.host
-      }`
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${ctx.req.headers.host
+        }`
     }
 
     const req = await fetch(`${host}/api/products`)

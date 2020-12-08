@@ -3,12 +3,14 @@ import Container from './../components/Container/Container'
 import Footer from './../components/Footer/Footer'
 import css from './../styles/404.scss'
 import Link from 'next/link'
+import Head from 'next/head'
 
 import './../styles/404.scss'
 
 const Error = () => {
   return (
     <>
+      <Head>Клякса | Ошибка 404</Head>
       <Header />
       <img
         className={css.image_404}

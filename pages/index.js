@@ -1,4 +1,5 @@
 import { connect } from 'react-redux'
+import Head from 'next/head'
 
 import css from 'styles/index.scss'
 import Header from 'components/Header/Header'
@@ -8,8 +9,11 @@ import Footer from 'components/Footer/Footer'
 
 const HomePage = ({ adminLogin }) => (
   <>
+    <Head>
+      <title>Клякса | Главная страница</title>
+    </Head>
     <Header adminLogin={adminLogin} />
-    <div className={css.image}>Картинка</div>
+    <div className={css.image}></div>
     <Container>
       <h2 className={css.title}>О нас</h2>
       <p>
