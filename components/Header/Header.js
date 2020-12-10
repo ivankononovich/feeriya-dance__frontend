@@ -32,7 +32,7 @@ const Header = ({ adminLogin }) => {
           <div className={css.burger__line}></div>
         </div>
         <Link href="/">
-          <a className={css.header__logo}>Мой магазин</a>
+          <a className={css.header__logo}></a>
         </Link>
       </Container>
 

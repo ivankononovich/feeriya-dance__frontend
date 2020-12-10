@@ -14,8 +14,22 @@
   justify-content: center;
   align-items: center;
   font-size: 90px;
-  background: url("/static/main-bg.jpg") no-repeat center;
+  background: url('/static/main-bg.jpg') no-repeat center;
   background-size: contain;
+}
+
+.main-paragraph {
+  font-size: 22px;
+  padding: 0 20px;
+  text-indent: 40px;
+  text-align: justify;
+}
+
+.main-list {
+  font-size: 22px;
+  margin-bottom: 70px;
+  padding: 0 20px;
+  list-style: none;
 }
 
 @media (max-width: 1024px) {
@@ -27,6 +41,14 @@
 @media (max-width: 768px) {
   .image {
     height: 260px;
+  }
+
+  .main-paragraph {
+    text-align: center;
+  }
+
+  .main-list {
+    text-align: center;
   }
 }
 

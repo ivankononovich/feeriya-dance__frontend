@@ -14,38 +14,39 @@ const HomePage = ({ adminLogin }) => (
     </Head>
     <Header adminLogin={adminLogin} />
     <div className={css.image}></div>
+    <h2 className={css.title}>О нас</h2>
     <Container>
-      <h2 className={css.title}>О нас</h2>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
+      <p className={css['main-paragraph']}>
+        Мы рады приветствовать вас, юных и взрослых посетителей нашего
+        интернет-магазина Klaksa! Заглядывая в Klaksa Вы сразу же увидите наш
+        огромный ассортимент детских игрушек в Беларуси:
       </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
-      </p>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta hic nam
-        provident sed repudiandae dolorum illum odit non dignissimos voluptates,
-        est temporibus reprehenderit, ratione delectus!
-      </p>
+      <ul className={css['main-list']}>
+        <li>- настольные и напольные игры;</li>
+        <li>- развивающие игры;</li>
+        <li>- головоломки;</li>
+        <li>- куклы;</li>
+        <li>- мозаику;</li>
+        <li>- и многое другое для ваших детей.</li>
+      </ul>
+      <h2 className={css.title}>Оплата</h2>
+      <div
+        style={{
+          marginBottom: '70px',
+        }}
+      >
+        <p className={css['main-paragraph']}>
+          Оформить заказ на нашем сайте легко. Просто добавьте выбранные товары
+          в корзину, а затем перейдите на страницу «Корзина».
+        </p>
+        <p className={css['main-paragraph']}>
+          Введите имя и номер телефона. По указанному номеру с Вами свяжется наш
+          менеджер для обсуждения деталей заказа.
+        </p>
+        <p className={css['main-paragraph']}>
+          Когда поля заполены, нажмите кнопку "Отправить заказ".
+        </p>
+      </div>
     </Container>
     <Footer />
   </>

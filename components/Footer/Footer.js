@@ -7,41 +7,44 @@ const Footer = () => {
       <Container>
         <div className={css.footerContacts}>
           <div className={css.footerContacts__item}>
-            <h3 className={css.footerContacts__title}>наш адрес</h3>
+            <h3 className={css.footerContacts__title}>самовызов</h3>
             <span className={css.footerContacts__text}>
-              Ул. Есенина, 76/1 ТЦ "Максимус", 1 этаж
+              г. Минск, ТЦ "Глобо", ул. Уманская,54, 1-ый этаж, пав. 83
             </span>
           </div>
           <div className={css.footerContacts__item}>
             <h3 className={css.footerContacts__title}>доставка</h3>
             <span className={css.footerContacts__text}>
-              почтой по всей Беларуси
+              <p>от 50 руб. доставка БЕСПЛАТНАЯ</p>
+              <p>при заказе до 50 руб. доставка 5 руб.</p>
+              <p>
+                Доставка осуществляется почтой или курьером в пределах г. Минска
+              </p>
             </span>
           </div>
           <div className={css.footerContacts__item}>
             <h3 className={css.footerContacts__title}>Время работы</h3>
             <span className={css.footerContacts__text}>
-              вторник - воскресенье 10:00 - 19:00
+              <p>пн-сб с 10:00 до 19:00</p>
+              <p>воскресенье с 10:00 до 18:00</p>
             </span>
           </div>
         </div>
       </Container>
-      <div style={{ color: 'red' }}>Оплата</div>
       <div className={css.ownerInfo}>
         <Container>
-          <h3 className={css.ownerInfo__title}>О нашем магазине</h3>
           <div className={css.ownerInfo__text}>
             <p className={css.ownerInfo__line}>
-              ИП Иванов Иван Иванович, зарегистрирован в Торговом реестре
-              10.11.2000. проспект Победителей 111
+              ИП Карташова Татьяна Вячеславовна, зарегистрирована в Торговом
+              реестре 21.10.2020 г. ул. Славинского 29/58
             </p>
             <p className={css.ownerInfo__line}>
-              УНП 123456789 выдано 15.11.2000г. Администрацией Ленинского района
-              г.Минска.
+              УНП 193481303 выдано 21.10.2020 г. Администрацией Первомайского
+              района г. Минска.
             </p>
             <p className={css.ownerInfo__line}>
-              Лицензия на розничную торговлю 60000/0386488 выдана
-              Мингорисполкомом с 20.06.2012 г.
+              Лицензия на розничную торговлю 0802953 выдана Мингорисполкомом с
+              21.10.2020 г.
             </p>
           </div>
         </Container>

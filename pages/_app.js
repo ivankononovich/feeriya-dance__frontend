@@ -48,6 +48,15 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
           rel="stylesheet"
         />
+        <link rel="shortcut icon" href="/static/k.png" type="image/png" />
+        <meta
+          name="description"
+          content="Магазин детских игрушек в Беларуси Klaksa. В нашем магазине вы найдете настольные и напольные игры, развивающие игры, головоломки, куклы, мозаику, и многое другое для ваших детей."
+        />
+        <meta
+          name="Keywords"
+          content="детские игрушки Беларусь, детские игры, настольные и напольные игры, развивающие игры, куклы "
+        />
       </Head>
       <Provider store={store}>
         <Component {...pageProps} />

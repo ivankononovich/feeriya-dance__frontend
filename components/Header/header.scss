@@ -1,17 +1,22 @@
 .header {
   &__logo {
     position: relative;
-    transition: 0.3s;
-    background: -webkit-linear-gradient(180deg, #ffe65a, #5983f0);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    font-size: 30px;
-    font-weight: 700;
-    text-decoration: none;
-    letter-spacing: 2px;
+    // transition: 0.3s;
+    // background: -webkit-linear-gradient(180deg, #ffe65a, #5983f0);
+    // -webkit-background-clip: text;
+    // -webkit-text-fill-color: transparent;
+    // font-size: 30px;
+    // font-weight: 700;
+    // text-decoration: none;
+    // letter-spacing: 2px;
+    // display: block;
+    // text-align: center;
+    background: url('/static/logo.jpg') no-repeat center;
+    width: 350px;
+    height: 70px;
     display: block;
-    text-align: center;
     margin: 30px auto 0;
+    background-size: contain;
 
     &:hover {
       letter-spacing: unset;
@@ -58,7 +63,6 @@
   .header {
     &__logo {
       margin: 30px auto;
-      width: 250px;
     }
   }
 
@@ -70,5 +74,11 @@
 @media (max-width: 500px) {
   .burger {
     top: 18px;
+  }
+
+  .header {
+    &__logo {
+      width: 300px;
+    }
   }
 }

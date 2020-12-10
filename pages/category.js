@@ -14,7 +14,6 @@ import { saveProducts } from 'store/category/actions'
 import { initializeStore } from 'store/make-store'
 
 function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
-  // console.log(products)
   const router = useRouter()
   let renderContent = <Loader />
 
@@ -25,26 +24,17 @@ function CategoryPage({ reqProducts, products, saveProducts, adminLogin }) {
   } else {
     if (router.query.id) {
       const sortOptions = router.query.id.split('-')
-      // console.log('###sortOptions ', sortOptions)
 
       products = products.filter((item) => {
         let result = false
-        // console.log('###item: ', item)
 
         sortOptions.forEach((id) => {
           result = item.categorize.includes(id)
-          // console.log('###result: ', result)
         })
 
         return result ? item : false
       })
     }
-    // console.log('#Products ', products)
-    // renderContent = products.map((item, index) => {
-    //   return <ProductPreview {...item} key={index} />
-    //   // return <ProductPreview products={...item} key={index} />
-    // })
-    // console.log('aaza', renderContent)
 
     renderContent = <ProductPreview products={products} />
   }
@@ -93,8 +83,9 @@ CategoryPage.getInitialProps = async (ctx) => {
   if (!products.length) {
     let host = ''
     if (ctx.req) {
-      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${ctx.req.headers.host
-        }`
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
+        ctx.req.headers.host
+      }`
     }
 
     const req = await fetch(`${host}/api/products`)

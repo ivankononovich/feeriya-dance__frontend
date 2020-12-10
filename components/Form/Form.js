@@ -58,8 +58,8 @@ export default class extends Component {
 
     if (!isSomeNotValid) {
       const { listProducts } = this.props
-      const botID = '1475044414:AAH3o2vbW4qULw4KfccOejJMkslYQDWWE5g'
-      const chatId = '722454253'
+      const botID = '1484343319:AAE87A_V-TQL23605K1wQsqRkuCkb21XdyE'
+      const chatId = '322434371'
       phone.classList.remove(css.form__input_err)
 
       message += `products: \n`
@@ -100,9 +100,9 @@ export default class extends Component {
   clearBasket() {
     const { listProducts, removeProductToBasket, totalPrice } = this.props
 
-      ;[...listProducts].forEach((item) => {
-        removeProductToBasket({ product: item, price: 0 })
-      })
+    ;[...listProducts].forEach((item) => {
+      removeProductToBasket({ product: item, price: 0 })
+    })
 
     removeProductToBasket({ product: '', price: totalPrice })
   }
@@ -129,7 +129,11 @@ export default class extends Component {
     const { phoneValue, nameValue, status, basketIsEmpty } = this.state
 
     if (status === 'send') {
-      return <div className={css.successful}>Ваш заказ отправлен! Вам перезвонят в течение 10 минут!</div>
+      return (
+        <div className={css.successful}>
+          Ваш заказ отправлен! Вам перезвонят в течение 10 минут!
+        </div>
+      )
     }
 
     if (basketIsEmpty) {
