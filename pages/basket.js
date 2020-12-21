@@ -62,12 +62,12 @@ function BasketPage({
       {products.length && renderContent.length ? (
         <Container>
           <h2 className={css['full-price']}>
-            Итоговая цена: {totalPrice} бел.руб
+            Итоговая цена: {totalPrice.toFixed(2)} бел.руб
           </h2>
         </Container>
       ) : (
-        ''
-      )}
+          ''
+        )}
       <Container additionalClasses={['container_product-preview-container']}>
         {renderContent}
       </Container>
@@ -86,9 +86,8 @@ BasketPage.getInitialProps = async (ctx) => {
   if (!products.length) {
     let host = ''
     if (ctx.req) {
-      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${
-        ctx.req.headers.host
-      }`
+      host = `${ctx.req?.connection.encrypted ? 'https://' : 'http://'}${ctx.req.headers.host
+        }`
     }
 
     const req = await fetch(`${host}/api/products`)

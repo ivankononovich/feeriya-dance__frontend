@@ -16,7 +16,17 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
           className={css.categories__item}
           key={category.name_en.replace(' ', '-')}
         >
-          <a className={css.categories__link}>{category.name_ru}</a>
+          <a
+            className={css.categories__link}
+            href={
+              category.name_en === 'igri-dlya-malishei'
+                ? 'category?id=toys-for-babies-Игры%20для%20малышей'
+                : category.name_en === 'nastolnie-igri'
+                  ? 'category?id=board-games-Настольные%20игры'
+                  : '#'
+            }>
+            {category.name_ru}
+          </a>
           {!!category.subcategories.length && (
             <ul className={css.categories__subcategories}>
               {category.subcategories.map((subcategory) => {

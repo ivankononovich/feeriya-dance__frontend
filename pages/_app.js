@@ -4,6 +4,7 @@ import fetch from 'isomorphic-unfetch'
 import Head from 'next/head'
 
 import 'styles/_app.scss'
+import 'styles/index.scss'
 import { useStore } from 'store/make-store'
 
 import {
@@ -16,6 +17,15 @@ import { initProductToBasket } from 'store/product/actions'
 export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
   const { dispatch } = store
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true
+  }
 
   useEffect(() => {
     const listInitReq = ['contacts']
@@ -58,6 +68,17 @@ export default function App({ Component, pageProps }) {
           content="детские игрушки Беларусь, детские игры, настольные и напольные игры, развивающие игры, куклы "
         />
       </Head>
+      {/* <script type="text/javascript">
+        $(document).ready(function(){
+          $('.image').slick({
+            dots: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 1,
+            slidesToScroll: 1,
+          })
+        });
+      </script> */}
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>

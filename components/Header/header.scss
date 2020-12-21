@@ -1,21 +1,11 @@
 .header {
   &__logo {
     position: relative;
-    // transition: 0.3s;
-    // background: -webkit-linear-gradient(180deg, #ffe65a, #5983f0);
-    // -webkit-background-clip: text;
-    // -webkit-text-fill-color: transparent;
-    // font-size: 30px;
-    // font-weight: 700;
-    // text-decoration: none;
-    // letter-spacing: 2px;
-    // display: block;
-    // text-align: center;
     background: url('/static/logo.jpg') no-repeat center;
-    width: 350px;
-    height: 70px;
+    width: 400px;
+    height: 80px;
     display: block;
-    margin: 30px auto 0;
+    margin: 0 auto;
     background-size: contain;
 
     &:hover {
@@ -62,12 +52,21 @@
 @media (max-width: 1024px) {
   .header {
     &__logo {
-      margin: 30px auto;
+      margin: 0 auto 30px;
     }
   }
 
   .burger {
     display: flex;
+  }
+}
+
+@media (max-width: 600px) {
+  .header {
+    &__logo {
+      width: 292px;
+      height: 58px;
+    }
   }
 }
 
