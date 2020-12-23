@@ -47,7 +47,7 @@
   &__link {
     color: #222222;
     text-decoration: none;
-    line-height: 45px;
+    line-height: 39px;
     display: block;
     padding: 0 20px;
     cursor: default;
@@ -69,9 +69,9 @@
     &_active {
       position: absolute;
       left: 0;
-      top: -158px;
+      top: -370px;
       z-index: 11;
-      width: 240px;
+      width: 282px;
       height: 100vh;
       padding-top: 120px;
       padding-left: 0;
@@ -85,8 +85,24 @@
     }
 
     &__subcategories {
-      top: 307px;
+      top: 316px;
       box-shadow: none;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .categories {
+    &_active {
+      top: -268px;
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .categories {
+    &_active {
+      top: -206px;
     }
   }
 }
@@ -94,12 +110,12 @@
 @media (max-width: 500px) {
   .categories {
     &_active {
-      top: -249px;
+      top: -307px;
       padding-top: 70px;
     }
 
     &__subcategories {
-      top: 259px;
+      top: 267px;
     }
   }
 }

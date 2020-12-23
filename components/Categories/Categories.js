@@ -20,10 +20,12 @@ const Categories = ({ categories, showMenu, setShowMenu }) => {
             className={css.categories__link}
             href={
               category.name_en === 'igri-dlya-malishei'
-                ? 'category?id=toys-for-babies-Игры%20для%20малышей'
+                ? 'category?id=toys-for-babies-Игрушки%20для%20малышей'
                 : category.name_en === 'nastolnie-igri'
                   ? 'category?id=board-games-Настольные%20игры'
-                  : '#'
+                  : category.name_en === 'constructori'
+                    ? 'category?id=constructori-Конструкторы'
+                    : '#'
             }>
             {category.name_ru}
           </a>

@@ -72,3 +72,9 @@
     top: 104%;
   }
 }
+
+@media (max-width: 440px) {
+  .slideActive {
+    width: 100%;
+  }
+}

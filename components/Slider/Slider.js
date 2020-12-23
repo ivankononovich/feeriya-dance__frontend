@@ -28,22 +28,20 @@ const Slider = () => {
   const length = sliderData.length
 
   const nextSlide = () => {
-    setCurrent(current === length - 1 ? 0 : current + 1)
-  }
-
-  const prevSlide = () => {
-    setCurrent(current === 0 ? length - 1 : current - 1)
+    setTimeout(() => {
+      setCurrent(current === length - 1 ? 0 : current + 1)
+    }, 4000)
   }
 
   if (!Array.isArray(sliderData) || sliderData.length <= 0) {
     return null
   }
 
+  nextSlide()
+
   return (
     <Container>
       <div className={css1.slider}>
-        <FaArrowAltCircleLeft className={css1.leftArrow} onClick={prevSlide} />
-        <FaArrowAltCircleRight className={css1.rightArrow} onClick={nextSlide} />
         {
           sliderData.map((slide, index) => {
             return (

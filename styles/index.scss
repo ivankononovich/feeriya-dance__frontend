@@ -72,10 +72,6 @@
     max-width: 500px;
     height: 210px;
   }
-
-  .title1 {
-    margin-top: 80px;
-  }
 }
 
 @media (max-width: 500px) {
@@ -84,9 +80,8 @@
   }
 }
 
-@media (max-width: 415px) {
+@media (max-width: 440px) {
   .image {
-    height: 170px;
-    max-width: 320px;
+    object-fit: contain;
   }
 }

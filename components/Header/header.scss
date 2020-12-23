@@ -2,11 +2,11 @@
   &__logo {
     position: relative;
     background: url('/static/logo.jpg') no-repeat center;
-    width: 400px;
-    height: 80px;
+    max-width: 1200px;
+    width: 100%;
+    height: 277px;
     display: block;
     margin: 0 auto;
-    background-size: contain;
 
     &:hover {
       letter-spacing: unset;
@@ -61,11 +61,19 @@
   }
 }
 
+@media (max-width: 768px) {
+  .header {
+    &__logo {
+      background-size: cover;
+      height: 177px;
+    }
+  }
+}
+
 @media (max-width: 600px) {
   .header {
     &__logo {
-      width: 292px;
-      height: 58px;
+      height: 117px;
     }
   }
 }
@@ -73,11 +81,5 @@
 @media (max-width: 500px) {
   .burger {
     top: 18px;
-  }
-
-  .header {
-    &__logo {
-      width: 300px;
-    }
   }
 }
