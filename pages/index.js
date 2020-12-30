@@ -1,20 +1,25 @@
 import { connect } from 'react-redux'
 import Head from 'next/head'
 
+import Carousel from 'react-elastic-carousel';
+
 import css from 'styles/index.scss'
 import Header from 'components/Header/Header'
-import Slider from 'components/Slider/Slider'
+import MainSlider from 'components/MainSlider/MainSlider'
 import Container from 'components/Container/Container'
 import Footer from 'components/Footer/Footer'
 
 const HomePage = ({ adminLogin }) => {
+
   return (
     <>
       <Head>
         <title>Клякса | Главная страница</title>
       </Head>
       <Header adminLogin={adminLogin} />
-      <Slider />
+      <Container>
+        <MainSlider />
+      </Container>
       <h2 className={css.title1}>О нас</h2>
       <Container>
         <p className={css['main-paragraph']}>
