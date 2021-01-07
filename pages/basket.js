@@ -29,6 +29,10 @@ function BasketPage({
     }
   } else {
     const sortOptions = listProducts
+    // const a = products.filter((item) => sortOptions.some((id) => id === item.name_en))
+    // console.log('a: ', a);
+    // console.log('listProducts: ', listProducts)
+    // console.log('products: ', products)
 
     renderContent = products
       .filter((item) => sortOptions.some((id) => id === item.name_en))
@@ -62,7 +66,7 @@ function BasketPage({
       {products.length && renderContent.length ? (
         <Container>
           <h2 className={css['full-price']}>
-            Итоговая цена: {totalPrice.toFixed(2)} бел.руб
+            Итоговая цена: {totalPrice.toFixed(2)} BYN
           </h2>
         </Container>
       ) : (

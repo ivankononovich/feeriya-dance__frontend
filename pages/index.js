@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import Head from 'next/head'
 
-import Carousel from 'react-elastic-carousel';
+import Carousel from 'react-elastic-carousel'
 
 import css from 'styles/index.scss'
 import Header from 'components/Header/Header'
@@ -10,7 +10,6 @@ import Container from 'components/Container/Container'
 import Footer from 'components/Footer/Footer'
 
 const HomePage = ({ adminLogin }) => {
-
   return (
     <>
       <Head>
@@ -42,12 +41,12 @@ const HomePage = ({ adminLogin }) => {
           }}
         >
           <p className={css['main-paragraph']}>
-            Добавьте выбранные товары
-            в корзину, а затем перейдите на страницу «Корзина».
+            Добавьте выбранные товары в корзину, а затем перейдите на страницу
+            «Корзина».
           </p>
           <p className={css['main-paragraph']}>
-            Введите имя и номер телефона. По указанному номеру с Вами свяжется наш
-            менеджер для обсуждения деталей заказа.
+            Введите имя и номер телефона. По указанному номеру с Вами свяжется
+            наш менеджер для обсуждения деталей заказа.
           </p>
           <p className={css['main-paragraph']}>
             Когда поля заполены, нажмите кнопку "Отправить заказ".

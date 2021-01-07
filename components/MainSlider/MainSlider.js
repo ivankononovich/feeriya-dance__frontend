@@ -1,4 +1,4 @@
-import Slider from "react-slick";
+import Slider from 'react-slick'
 
 import Link from 'next/link'
 
@@ -9,48 +9,50 @@ const MainSlider = ({ img }) => {
     dots: true,
     infinite: true,
     autoplay: true,
-    autoplaySpeed: 4500,
-    speed: 1200,
+    autoplaySpeed: 6000,
+    speed: 1700,
     slidesToShow: 1,
     slidesToScroll: 1,
-    dotsClass: css.button__bar
-  };
+    dotsClass: css.button__bar,
+  }
 
   const sliderData = [
     {
-      image: 'main-bg.jpg',
-      url: '/product?id=monopoliya-bolshaya-afera'
+      image: '111.jpg',
+      url: '/product?id=monopoliya-bolshaya-afera',
     },
     {
       image: 'Untitled-1.jpg',
-      url: '/product?id=LOL-kykla-s-volosami-564744Е7С-V'
+      url: '/product?id=LOL-kykla-s-volosami-564744Е7С-V',
     },
     {
       image: 'Untitled-2.jpg',
-      url: '/product?id=inercionni-avto-kran-1'
+      url: '/product?id=inercionni-avto-kran-1',
     },
     {
       image: 'Untitled-3.jpg',
-      url: '/product?id=konstruktor-81-88a'
+      url: '/product?id=kukla-s-sobachkoi-cs699-12',
     },
   ]
 
   return (
     <div style={{ overflowX: 'hidden' }}>
       <Slider {...settings}>
-        {
-          sliderData.map((slide, index) => {
-            return (
-              <>
-                <Link href={slide.url}>
-                  <a>
-                    <img className={css['card']} src={`/static/${slide.image}`} key={index} />
-                  </a>
-                </Link>
-              </>
-            )
-          })
-        }
+        {sliderData.map((slide, index) => {
+          return (
+            <>
+              <Link href={slide.url}>
+                <a>
+                  <img
+                    className={css['card']}
+                    src={`/static/${slide.image}`}
+                    key={index}
+                  />
+                </a>
+              </Link>
+            </>
+          )
+        })}
       </Slider>
     </div>
   )

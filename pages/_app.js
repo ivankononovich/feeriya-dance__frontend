@@ -18,15 +18,6 @@ export default function App({ Component, pageProps }) {
   const store = useStore(pageProps.initialReduxState)
   const { dispatch } = store
 
-  const settings = {
-    dots: true,
-    infinite: true,
-    speed: 1000,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    autoplay: true
-  }
-
   useEffect(() => {
     const listInitReq = ['contacts']
 
@@ -58,11 +49,15 @@ export default function App({ Component, pageProps }) {
           href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600,700&display=swap&subset=cyrillic"
           rel="stylesheet"
         />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400&display=swap"
+          rel="stylesheet"
+        />
         <link rel="shortcut icon" href="/static/k.png" type="image/png" />
         <link
           rel="stylesheet"
           type="text/css"
-          charset="UTF-8"
+          charSet="UTF-8"
           href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.min.css"
         />
         <link
@@ -79,17 +74,6 @@ export default function App({ Component, pageProps }) {
           content="детские игрушки Беларусь, детские игры, настольные и напольные игры, развивающие игры, куклы "
         />
       </Head>
-      {/* <script type="text/javascript">
-        $(document).ready(function(){
-          $('.image').slick({
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-          })
-        });
-      </script> */}
       <Provider store={store}>
         <Component {...pageProps} />
       </Provider>
