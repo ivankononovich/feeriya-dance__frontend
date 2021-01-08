@@ -21,6 +21,10 @@ function BasketPage({
   listProducts,
   totalPrice,
 }) {
+  products = products.sort((a, b) => a.name_en > b.name_en ? 1 : -1)
+  listProducts = listProducts.sort()
+  console.log(products)
+  console.log('listProducts: ', listProducts)
   let renderContent = <Loader />
 
   if (!products.length) {
@@ -29,14 +33,22 @@ function BasketPage({
     }
   } else {
     const sortOptions = listProducts
-    // const a = products.filter((item) => sortOptions.some((id) => id === item.name_en))
-    // console.log('a: ', a);
-    // console.log('listProducts: ', listProducts)
-    // console.log('products: ', products)
+
+    const productsAmount = listProducts.reduce((acc, el) => {
+      acc[el] = (acc[el] || 0) + 1;
+      return acc;
+    }, {})
+
+
+    // console.log(b)
+    const productsIndexes = Object.values(productsAmount)
+    // console.log(c)
+    // let res
 
     renderContent = products
-      .filter((item) => sortOptions.some((id) => id === item.name_en))
-      .map((item) => {
+      .filter((item) => sortOptions.some((id) => item.name_en === id))
+      .map((item, index) => {
+        console.log(item)
         return (
           <div className={css['product-wrapper']} key={item.name_en}>
             <button
@@ -50,7 +62,7 @@ function BasketPage({
             >
               Удалить из корзины &#9587;
             </button>
-            <ProductPreview products={[item]} />
+            <ProductPreview products={[item]} index={productsIndexes[index]} />
             {/* <div>{JSON.stringify(item.name_ru)}</div> */}
           </div>
         )

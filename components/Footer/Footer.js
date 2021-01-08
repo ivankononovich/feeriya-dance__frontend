@@ -14,22 +14,22 @@ const Footer = () => {
           </div>
           <div className={css.footerContacts__item}>
             <h3 className={css.footerContacts__title}>доставка</h3>
-            <span className={css.footerContacts__text}>
+            <p className={css.footerContacts__text}>
               <p>от 50 руб. доставка БЕСПЛАТНАЯ</p>
               <p>при заказе до 50 руб. доставка 5 руб.</p>
               <p>
                 Доставка осуществляется европочтой и белпочтой или курьером в
                 пределах г. Минска
               </p>
-            </span>
+            </p>
           </div>
           <div className={css.footerContacts__item}>
             <h3 className={css.footerContacts__title}>Время работы</h3>
-            <span className={css.footerContacts__text}>
+            <p className={css.footerContacts__text}>
               <p>пн-сб с 10:00 до 19:00</p>
               <p>воскресенье с 10:00 до 18:00</p>
               <p>Обработка заказов с 10:00 до 17:00</p>
-            </span>
+            </p>
           </div>
         </div>
       </Container>

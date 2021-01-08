@@ -108,7 +108,6 @@ const Product = ({
             <button
               className={`${css.product__remove}`}
               onClick={() => {
-                // addProductToBasket({ product: name_en, price: price * counter })
                 for (let i = 0; i < counter; i++) {
                   addProductToBasket({ product: name_en, price })
                 }
@@ -119,22 +118,22 @@ const Product = ({
               Купить
             </button>
           ) : (
-            <>
-              <button
-                className={`${css.product__buy} ${css.product__buy_bought}`}
-              >
-                Товар в корзине &#10003;
+              <>
+                <button
+                  className={`${css.product__buy} ${css.product__buy_bought}`}
+                >
+                  Товар в корзине &#10003;
               </button>
-              <button
-                className={`${css.product__remove}`}
-                onClick={() =>
-                  removeProductToBasket({ product: name_en, price })
-                }
-              >
-                Удалить из корзины &#9587;
+                <button
+                  className={`${css.product__remove}`}
+                  onClick={() =>
+                    removeProductToBasket({ product: name_en, price })
+                  }
+                >
+                  Удалить из корзины &#9587;
               </button>
-            </>
-          )}
+              </>
+            )}
         </div>
       </div>
       <div className={css['description']}>

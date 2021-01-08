@@ -71,6 +71,16 @@
     }
   }
 
+  &__counter {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #5983f0;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
   &:hover {
     border: 1px solid #eeeeee;
     z-index: 10;

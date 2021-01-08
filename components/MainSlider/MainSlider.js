@@ -47,6 +47,7 @@ const MainSlider = ({ img }) => {
                     className={css['card']}
                     src={`/static/${slide.image}`}
                     key={index}
+                    alt='Товар дня'
                   />
                 </a>
               </Link>
