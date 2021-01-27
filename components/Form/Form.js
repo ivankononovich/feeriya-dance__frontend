@@ -26,8 +26,8 @@ export default class extends Component {
 
   validationCheck(type, value) {
     const listFields = {
-      phone: /^\+375[44|33|29|25][0-9]{8}$/,
-      name: /\D+$/,
+      phone: /^\+?375(25|29|33|44)\d{7}/,
+      name: /\w+$/,
     }
 
     return value.match(listFields[type])
@@ -100,9 +100,9 @@ export default class extends Component {
   clearBasket() {
     const { listProducts, removeProductToBasket, totalPrice } = this.props
 
-    ;[...listProducts].forEach((item) => {
-      removeProductToBasket({ product: item, price: 0 })
-    })
+      ;[...listProducts].forEach((item) => {
+        removeProductToBasket({ product: item, price: 0 })
+      })
 
     removeProductToBasket({ product: '', price: totalPrice })
   }

@@ -23,8 +23,7 @@ function BasketPage({
 }) {
   products = products.sort((a, b) => a.name_en > b.name_en ? 1 : -1)
   listProducts = listProducts.sort()
-  console.log(products)
-  console.log('listProducts: ', listProducts)
+
   let renderContent = <Loader />
 
   if (!products.length) {
@@ -48,7 +47,6 @@ function BasketPage({
     renderContent = products
       .filter((item) => sortOptions.some((id) => item.name_en === id))
       .map((item, index) => {
-        console.log(item)
         return (
           <div className={css['product-wrapper']} key={item.name_en}>
             <button
